@@ -374,7 +374,7 @@ class Panel_admin extends CI_Controller {
 		}
 	}
 
-	
+
 // Tambahan Pringkat Update
 	public function peringkat_update($id='')
 	{
@@ -395,12 +395,12 @@ class Panel_admin extends CI_Controller {
 
 					if (isset($_POST['btnupdate'])) {
 						$nama = $this->input->post('nama');
-						
+
 						$bakat 	= $this->input->post('nilai_bakat');
 						$rapot 	= $this->input->post('nilai_rapot');
 						$un 	= $this->input->post('nilai_un');
 						$pai 	= $this->input->post('nilai_seleksi');
-						$registrasi 	= $this->input->post('registered'); //tambahan 
+						$registrasi 	= $this->input->post('registered'); //tambahan
 
 						$jumlah = $bakat + $rapot + $un + $pai;
 						$rata = $jumlah/4;
@@ -418,7 +418,7 @@ class Panel_admin extends CI_Controller {
 						$this->db->update('tbl_nilai', $data, array('no_pendaftaran' => $id));
 
 						$data2 = array(
-							
+
 							'registered' => $registrasi
 						);
 						$this->db->update('tbl_nilai', $data2, array('no_pendaftaran' => $id));
@@ -455,9 +455,9 @@ class Panel_admin extends CI_Controller {
 			$data['user']  			  = $this->db->get_where('tbl_user', "username='$ceks'");
 			$data['judul_web'] 		= "Ujian Seleksi";
 
-			
+
 			$data['v_siswa']  		= $this->db->query("select * from tbl_nilai WHERE keterangan='tidak lulus' ORDER BY rata_rata DESC");
-			$data['siswa']  		= $this->db->get('tbl_siswa'); 
+			$data['siswa']  		= $this->db->get('tbl_siswa');
 
 					$this->load->view('admin/header', $data);
 					$this->load->view('admin/peringkat/tidaklulus', $data);
@@ -483,7 +483,7 @@ class Panel_admin extends CI_Controller {
 
 					if (isset($_POST['btnupdate'])) {
 						$ruangan = $this->input->post('ruang_ujian');
-						
+
 						$bakat 	= $this->input->post('nilai_bakat');
 						$rapot 	= $this->input->post('nilai_rapot');
 						$un 	= $this->input->post('nilai_un');
@@ -827,8 +827,7 @@ class Panel_admin extends CI_Controller {
 					if (isset($_POST['btnupdate'])) {
 						$data = array(
 							'nominal'	=> $this->input->post('nominal'),
-							'total'	=> $this->input->post('total'),
-							'keterangan'	=> $this->input->post('keterangan')
+							'pendaftaran'	=> $this->input->post('pendaftaran')
 						);
 						$this->db->update('tbl_nominal', $data, array('id' => "1"));
 
@@ -841,7 +840,8 @@ class Panel_admin extends CI_Controller {
 								 <strong>Sukses!</strong> Nominal berhasil diperbarui.
 							</div>'
 						);
-						redirect('panel_admin/daftar_ulang');
+
+						redirect('panel_admin/edit_nominal');
 					}
 		}
 	}
@@ -863,7 +863,7 @@ class Panel_admin extends CI_Controller {
 
 					if (isset($_POST['btnupdate'])) {
 						$tgl =  $this->input->post('tanggal');
-						
+
 						$data = array(
 							'tgl_ujian'	=> $tgl
 						);

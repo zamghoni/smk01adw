@@ -22,21 +22,22 @@
                 ?>
                 <form class="form-horizontal" action="" method="post">
                   <div class="form-group">
+                    <label class="control-label col-lg-12">Biaya Pendaftaran :</label>
+                    <div class="col-lg-12">
+                      <input type="number" name="pendaftaran" class="form-control" value="<?php echo $ket->pendaftaran; ?>" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label class="control-label col-lg-12">Biaya Daftar Ulang :</label>
                     <div class="col-lg-12">
-                      <input type="text" name="nominal" class="form-control" value="<?php echo $ket->nominal; ?>" required>
+                      <input type="number" name="nominal" class="form-control" value="<?php echo $ket->nominal; ?>" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="control-label col-lg-12">Total Biaya :</label>
+                    <label class="control-label col-lg-12">Total Biaya Keseluruhan :</label>
                     <div class="col-lg-12">
-                      <input type="text" name="total" class="form-control" value="<?php echo $ket->total; ?>" required>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label col-lg-12">Keterangan Biaya :</label>
-                    <div class="col-lg-12">
-                      <textarea type="text" name="keterangan" class="form-control ckeditor" id="ckedtor" placeholder="Isi Keterangan" required><?php echo $ket->keterangan; ?></textarea>
+                      <?php $total = $ket->pendaftaran+$ket->nominal; ?>
+                      <p>Rp <?=number_format($total);?></p>
                     </div>
                   </div>
                   <hr>
