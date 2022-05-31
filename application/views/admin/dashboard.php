@@ -38,8 +38,9 @@
                   </div>
                   <h3 class="no-margin">
                     <?php
-                   // $thn_ini = date('Y'); otomatis
-                    $thn_ini = '2019';
+                   $thn_ini = date('Y');
+                   // otomatis
+                    // $thn_ini = '2019';
                     $this->db->like('tgl_siswa', $thn_ini, 'after');
                     echo number_format($this->db->get('tbl_siswa')->num_rows(),0,",","."); ?>
                   </h3>
