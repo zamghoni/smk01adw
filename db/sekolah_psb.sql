@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2022 at 11:34 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: May 31, 2022 at 04:43 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -290,16 +292,16 @@ INSERT INTO `tbl_nilai` (`id_nilai`, `no_pendaftaran`, `nama`, `nilai_bakat`, `n
 
 CREATE TABLE `tbl_nominal` (
   `id` int(11) NOT NULL,
-  `nominal` varchar(225) NOT NULL
+  `nominal` varchar(225) NOT NULL,
+  `pendaftaran` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_nominal`
 --
 
-INSERT INTO `tbl_nominal` (`id`, `nominal`) VALUES
-(1, '150000'),
-(2, '3500000');
+INSERT INTO `tbl_nominal` (`id`, `nominal`, `pendaftaran`) VALUES
+(1, '3250000', '200000');
 
 -- --------------------------------------------------------
 
@@ -416,7 +418,7 @@ CREATE TABLE `tbl_pengumuman` (
 --
 
 INSERT INTO `tbl_pengumuman` (`id_pengumuman`, `ket_pengumuman`, `tgl_pengumuman`) VALUES
-(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><strong><u>Keterangan :</u></strong></span></span></span><br />\r\n<span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Registrasi daftar ulang dilaksanakan pada tanggal 8 &ndash; 11 Juli 2019&nbsp;pukul 08.00 &ndash; 14.00 </span></span></span></span><br />\r\n<span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;2. Mencetak dan membawa Surat Pengumuman ini sebagai bukti&nbsp; lulus seleksi</span></span></span></span><br />\r\n<span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt">&nbsp; &nbsp; &nbsp; &nbsp; 3.&nbsp;Membawa materai Rp. 6000,- sebanyak 2 lembar</span></span></span></span></p>\r\n</body>\r\n</html>\r\n', '2018-04-14 00:00:00');
+(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Keterangan :</u></strong></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Registrasi daftar ulang dilaksanakan pada tanggal 8 &ndash; 11 Juli 2019&nbsp;pukul 08.00 &ndash; 14.00 </span></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;2. Mencetak dan membawa Surat Pengumuman ini sebagai bukti&nbsp; lulus seleksi</span></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp; &nbsp; &nbsp; &nbsp; 3.&nbsp;Membawa materai Rp. 6000,- sebanyak 2 lembar</span></span></span></span></p>\r\n</body>\r\n</html>\r\n', '2018-04-14 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -555,7 +557,7 @@ INSERT INTO `tbl_siswa` (`id_siswa`, `no_pendaftaran`, `password`, `nisn`, `nama
 (3, '003-PSB-2022', '5656565', 5656565, 'Yulianto Dzaky', 'Laki-Laki', 'Cirebon', '04-05-2005', 'Islam', 3, 5, 0, 'Jalan Nangka RT 2 RW 20', '6289655420961', 'Teknik Komputer Jaringan (TKJ)', 'Rudi Salim', 'S1', 'Lain-lain ', '>10jt', '628448874744', 'Nagita Yanti', 'S2', 'TNI/POLRI', '>10jt', '628448874744', '', '', '', '', '', NULL, '2022-03-10 11:12:57', '00984545466', 'SMP Negeri 10 Cirebon', 'Jalan Raya Galon, Cirebon Utara', '2019', '85', '90', '80', '612', '1', NULL),
 (4, '004-PSB-2022', '0089765544', 89765544, 'Muhammad Irkham Maulana', 'Laki-Laki', 'Tegal', '15-01-2005', 'Islam', 3, 2, 0, 'Jalan Manggis RT 02 Rw 02 Kel. Procot', '6285800689339', 'Akuntansi', 'Fahrul', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retno', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:39:21', '6654334454556', 'SMP Negeri 1 Slawi', 'Jalan Nangka', '2019', '67', '75', '90', '452', NULL, NULL),
 (5, '005-PSB-2022', '0089765544', 89765544, 'Muhammad Irkham Maulana', 'Laki-Laki', 'Tegal', '15-01-2005', 'Islam', 3, 2, 0, 'Jalan Manggis RT 02 Rw 02 Kel. Procot', '6285800689339', 'Akuntansi', 'Fahrul', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retno', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:39:23', '6654334454556', 'SMP Negeri 1 Slawi', 'Jalan Nangka', '2019', '67', '75', '90', '452', NULL, NULL),
-(6, '006-PSB-2022', '7463587463', 2147483647, 'Irkham Maul', 'Laki-Laki', 'Debong', '05-03-2006', 'Islam', 3, 2, 0, 'Jalan Sawo', '6285800689339', 'Teknik Komputer Jaringan (TKJ)', 'Azis', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retnoyati', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:47:54', '097655', 'SMP Negeri 1 Slawi', 'Jalan Imam Bonjol', '2018', '85', '85', '75', '541', '1', NULL);
+(6, '006-PSB-2022', '7463587463', 2147483647, 'Irkham Maul', 'Laki-Laki', 'Debong', '05-03-2006', 'Islam', 3, 2, 0, 'Jalan Sawo', '6285800689339', 'Teknik Komputer Jaringan (TKJ)', 'Azis', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retnoyati', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:47:54', '097655', 'SMP Negeri 1 Slawi', 'Jalan Imam Bonjol', '2018', '85', '85', '75', '541', '0', NULL);
 
 -- --------------------------------------------------------
 
@@ -625,7 +627,7 @@ CREATE TABLE `tbl_verifikasi` (
 --
 
 INSERT INTO `tbl_verifikasi` (`id_verifikasi`, `isi`, `ket`, `tgl_verifikasi`) VALUES
-(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><u>Materi Tes Potensi Akdemik :</u></strong></span></span><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><u> </u></strong></span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Pendidikan Agama Islam (PAI)&nbsp; &nbsp; &nbsp; : 25 soal </span></span></p>\r\n\r\n<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><u>Hari Tanggal tes : </u></strong></span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;tanggal 3 s.d 5 Juli 2019</span></span></p>\r\n\r\n<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><u>Waktu Tes potensi Akademik :</u></strong></span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 1&nbsp; : 07.00 - 09.00</span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 2&nbsp; : 09.30 - 11.30<br />\r\n&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></span><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">Sesi 3&nbsp; : 12.00 - 14.00</span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 4&nbsp; : 14.30 - 16.30</span></span></p>\r\n\r\n<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Calibri,sans-serif"><span style="font-size:14.6667px"><strong>Note :</strong></span></span><br />\r\n<strong><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><em>jadwal ujian bisa berubah sewaktu - waktu&nbsp; Update infomasi di web PSB&nbsp;</em></span></span><em><span style="font-size:11.0pt">peserta ujian datang 15&nbsp; menit sebelun tes dimulai.</span></em></strong></p>\r\n</body>\r\n</html>\r\n', NULL, NULL);
+(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Materi Tes Potensi Akdemik :</u></strong></span></span><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u> </u></strong></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Pendidikan Agama Islam (PAI)&nbsp; &nbsp; &nbsp; : 25 soal </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Hari Tanggal tes : </u></strong></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;tanggal 3 s.d 5 Juli 2019</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Waktu Tes potensi Akademik :</u></strong></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 1&nbsp; : 07.00 - 09.00</span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 2&nbsp; : 09.30 - 11.30<br />\r\n&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></span><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">Sesi 3&nbsp; : 12.00 - 14.00</span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 4&nbsp; : 14.30 - 16.30</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:14.6667px\"><strong>Note :</strong></span></span><br />\r\n<strong><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><em>jadwal ujian bisa berubah sewaktu - waktu&nbsp; Update infomasi di web PSB&nbsp;</em></span></span><em><span style=\"font-size:11.0pt\">peserta ujian datang 15&nbsp; menit sebelun tes dimulai.</span></em></strong></p>\r\n</body>\r\n</html>\r\n', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -920,121 +922,146 @@ ALTER TABLE `tr_siswa_mapel`
 --
 ALTER TABLE `m_admin`
   MODIFY `id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `m_guru`
 --
 ALTER TABLE `m_guru`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `m_mapel`
 --
 ALTER TABLE `m_mapel`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `m_soal`
 --
 ALTER TABLE `m_soal`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
 --
 -- AUTO_INCREMENT for table `tbl_bakat`
 --
 ALTER TABLE `tbl_bakat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
   MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
   MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `tbl_nominal`
 --
 ALTER TABLE `tbl_nominal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `tbl_pdd`
 --
 ALTER TABLE `tbl_pdd`
   MODIFY `id_pdd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `tbl_pekerjaan`
 --
 ALTER TABLE `tbl_pekerjaan`
   MODIFY `id_pekerjaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT for table `tbl_pembayaran`
 --
 ALTER TABLE `tbl_pembayaran`
   MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `tbl_penghasilan`
 --
 ALTER TABLE `tbl_penghasilan`
   MODIFY `id_penghasilan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
 --
 ALTER TABLE `tbl_pengumuman`
   MODIFY `id_pengumuman` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `tbl_rapor`
 --
 ALTER TABLE `tbl_rapor`
   MODIFY `id_rapor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `tbl_ruang_ujian`
 --
 ALTER TABLE `tbl_ruang_ujian`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
 --
 -- AUTO_INCREMENT for table `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
   MODIFY `id_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `tbl_ujian`
 --
 ALTER TABLE `tbl_ujian`
   MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `tbl_verifikasi`
 --
 ALTER TABLE `tbl_verifikasi`
   MODIFY `id_verifikasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `tbl_web`
 --
 ALTER TABLE `tbl_web`
   MODIFY `id_web` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `tr_guru_mapel`
 --
 ALTER TABLE `tr_guru_mapel`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `tr_guru_tes`
 --
 ALTER TABLE `tr_guru_tes`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `tr_ikut_ujian`
 --
 ALTER TABLE `tr_ikut_ujian`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `tr_siswa_mapel`
 --
 ALTER TABLE `tr_siswa_mapel`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
