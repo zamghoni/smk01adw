@@ -272,14 +272,19 @@ $web = $web->row();
                       <td><?php echo $user->bahasa_indonesia; ?></td>
                     </tr>
                     <tr>
+                      <th>Nilai Bahasa Inggris</th>
+                      <th>:</th>
+                      <td><?php echo $user->bahasa_inggris; ?></td>
+                    </tr>
+                    <tr>
                       <th>Nilai I.P.A</th>
                       <th>:</th>
                       <td><?php echo $user->ipa; ?></td>
                     </tr>
                     <tr>
-                      <th>Jumlah Nilai UN</th>
+                      <th>Rata-Rata Nilai UN</th>
                       <th>:</th>
-                      <td><?php echo $user->jml_nilai_un; ?></td>
+                      <td><?php echo $user->rata_rata; ?></td>
                     </tr>
                 </table>
               </div>
@@ -417,8 +422,8 @@ $web = $web->row();
           </div>
       </div>
       </div>
-    <?php 
-/*  
+    <?php
+/*
       $r1 = array(
         '001-PSB-2019',
         '002-PSB-2019',
