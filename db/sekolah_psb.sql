@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2022 at 04:43 PM
+-- Generation Time: Jun 04, 2022 at 12:52 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -50,7 +50,8 @@ INSERT INTO `m_admin` (`id`, `username`, `password`, `level`, `kon_id`) VALUES
 (20, '002-PSB-2021', '93279e3308bdbbeed946fc965017f67a', 'siswa', 121212),
 (21, '003-PSB-2022', '77f3ffc196859645fe95aff266d57ef8', 'siswa', 5656565),
 (22, '004-PSB-2022', '3b980eb3322a393bab4867841c29f0ee', 'siswa', 89765544),
-(23, '006-PSB-2022', 'e6d94328665d1c715cbd9c144238d69a', 'siswa', 2147483647);
+(24, '007-PSB-2022', 'c20ad4d76fe97759aa27a0c99bff6710', 'siswa', 12),
+(25, '010-PSB-2022', '752dd6bb21e79d33caa3e69feaca3e6c', 'siswa', 121212122);
 
 -- --------------------------------------------------------
 
@@ -141,6 +142,7 @@ INSERT INTO `m_siswa` (`id_siswa`, `nama`, `nim`, `jurusan`) VALUES
 ('0089765544', 'Muhammad Irkham Maulana', '004-PSB-2022', 'Akuntansi'),
 ('1', 'Nico Dwi Novianto', '001-PSB-2021', 'Teknik Komputer Jaringan (TKJ)'),
 ('121212', 'Warmo', '002-PSB-2021', 'Teknik Kendaraan Ringan (TKR)'),
+('121212122', 'asas', '010-PSB-2022', 'Teknik Kendaraan Ringan (TKR)'),
 ('5656565', 'Yulianto Dzaky', '003-PSB-2022', 'Teknik Komputer Jaringan (TKJ)'),
 ('7463587463', 'Irkham Maul', '006-PSB-2022', 'Teknik Komputer Jaringan (TKJ)');
 
@@ -228,7 +230,9 @@ INSERT INTO `tbl_bakat` (`id`, `nomor_piagam`, `no_pendaftaran`, `nama_prestasi`
 (2, '', '002-PSB-2021', 'wew', 2, 'Kecamatan', 2010, 0),
 (3, '', '003-PSB-2022', 'Mobile Lagends', 2, 'Provinsi', 2013, 0),
 (4, '', '004-PSB-2022', 'Mobile Lagends', 1, 'Nasional', 2022, 0),
-(5, '', '006-PSB-2022', 'Karate', 1, 'Nasional', 2021, 0);
+(5, '', '006-PSB-2022', 'Karate', 1, 'Nasional', 2021, 0),
+(6, '', '007-PSB-2022', '', 0, '', 0, 0),
+(7, '', '010-PSB-2022', '', 0, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -251,7 +255,9 @@ INSERT INTO `tbl_foto` (`id_foto`, `no_pendaftaran`, `nama_foto`) VALUES
 (2, '002-PSB-2021', 'default.jpg'),
 (3, '003-PSB-2022', 'default.jpg'),
 (4, '004-PSB-2022', 'default.jpg'),
-(5, '006-PSB-2022', 'logo-fl2mi.jpg');
+(5, '006-PSB-2022', 'logo-fl2mi.jpg'),
+(6, '007-PSB-2022', 'default.jpg'),
+(7, '010-PSB-2022', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -282,7 +288,8 @@ INSERT INTO `tbl_nilai` (`id_nilai`, `no_pendaftaran`, `nama`, `nilai_bakat`, `n
 (2, '002-PSB-2021', 'Warmo', 0, 90, 33396, 0, 0, 0, '', ''),
 (3, '003-PSB-2022', 'Yulianto Dzaky', 0, 83, 612000, 0, 0, 0, '', ''),
 (4, '004-PSB-2022', 'Muhammad Irkham Maulana', 0, 81, 452250, 0, 0, 0, '', ''),
-(5, '006-PSB-2022', 'Irkham Maul', 0, 79, 541875, 0, 0, 0, '', '');
+(5, '006-PSB-2022', 'Irkham Maul', 0, 79, 541875, 0, 0, 0, '', ''),
+(6, '010-PSB-2022', 'asas', 0, 0, 77, 0, 0, 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -462,7 +469,15 @@ INSERT INTO `tbl_rapor` (`id_rapor`, `mapel`, `semester1`, `semester2`, `semeste
 (17, 'Ilmu Pengetahuan Alam (IPA)', 88, 85, 86, 90, 90, 88, '006-PSB-2022'),
 (18, 'Matematika', 50, 88, 75, 85, 90, 78, '006-PSB-2022'),
 (19, 'Bahasa Indonesia', 80, 82, 83, 90, 87, 84, '006-PSB-2022'),
-(20, 'Bahasa Inggris', 75, 75, 75, 86, 85, 79, '006-PSB-2022');
+(20, 'Bahasa Inggris', 75, 75, 75, 86, 85, 79, '006-PSB-2022'),
+(21, 'Ilmu Pengetahuan Alam (IPA)', 80, 80, 80, 80, 80, 80, '007-PSB-2022'),
+(22, 'Matematika', 80, 80, 80, 80, 80, 80, '007-PSB-2022'),
+(23, 'Bahasa Indonesia', 80, 80, 80, 80, 80, 80, '007-PSB-2022'),
+(24, 'Bahasa Inggris', 80, 80, 80, 80, 90, 82, '007-PSB-2022'),
+(25, 'Ilmu Pengetahuan Alam (IPA)', 80, 80, 80, 80, 80, 0, '010-PSB-2022'),
+(26, 'Matematika', 80, 80, 80, 80, 80, 0, '010-PSB-2022'),
+(27, 'Bahasa Indonesia', 80, 80, 80, 80, 80, 0, '010-PSB-2022'),
+(28, 'Bahasa Inggris', 80, 80, 80, 80, 90, 0, '010-PSB-2022');
 
 -- --------------------------------------------------------
 
@@ -541,8 +556,9 @@ CREATE TABLE `tbl_siswa` (
   `tahun_lulus` varchar(4) NOT NULL,
   `matematika` varchar(3) NOT NULL,
   `bahasa_indonesia` varchar(3) NOT NULL,
+  `bahasa_inggris` varchar(3) NOT NULL,
   `ipa` varchar(3) NOT NULL,
-  `jml_nilai_un` varchar(3) NOT NULL,
+  `rata_rata` float NOT NULL,
   `status_verifikasi` varchar(30) DEFAULT NULL,
   `status_pendaftaran` varchar(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -551,13 +567,17 @@ CREATE TABLE `tbl_siswa` (
 -- Dumping data for table `tbl_siswa`
 --
 
-INSERT INTO `tbl_siswa` (`id_siswa`, `no_pendaftaran`, `password`, `nisn`, `nama_lengkap`, `jk`, `tempat_lahir`, `tgl_lahir`, `agama`, `anak_ke`, `jml_saudara_kandung`, `jml_saudara_tiri`, `alamat_siswa`, `telp_siswa`, `pil_jurusan`, `nama_ayah`, `pdd_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `no_hp_ayah`, `nama_ibu`, `pdd_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`, `no_hp_ibu`, `nama_wali`, `pdd_wali`, `pekerjaan_wali`, `penghasilan_wali`, `no_hp_wali`, `foto`, `tgl_siswa`, `nomor_ijazah`, `asal_sekolah`, `alamat_sekolah`, `tahun_lulus`, `matematika`, `bahasa_indonesia`, `ipa`, `jml_nilai_un`, `status_verifikasi`, `status_pendaftaran`) VALUES
-(1, '001-PSB-2021', '1', 1, 'Nico Dwi Novianto', 'Laki-Laki', 'JAKARTA', '26-02-2004', 'Islam', 2, 2, 2, 'Mega mall ciputat', '082328251600', 'Teknik Komputer Jaringan (TKJ)', 'WEWE', 'SD/MI', 'Wiraswasta', '5jt-10jt', '2323', 'WEWEW', 'SD/MI', 'Ibu Rumah Tangga\r\n', '< 500rb', '23232', 'WEW', 'Tdk Sekolah', 'Buruh', '500-1jt', '2323232', NULL, '2021-11-14 19:50:42', 'WEW', 'EW', 'WEWEW', '2017', '23', '232', '23', '122', '1', NULL),
-(2, '002-PSB-2021', '121212', 121212, 'Warmo', 'Laki-Laki', 'Bandung', '02-02-2004', 'Islam', 2, 3, 2, '3wewe', '23212', 'Teknik Kendaraan Ringan (TKR)', 'wewewe', 'Tdk Sekolah', 'PNS', '1jt-3jt', '2323', 'wewe', 'Tdk Sekolah', 'Buruh', '< 500rb', '2323', 'wew', 'Tdk Sekolah', 'Buruh', '500-1jt', '23223', NULL, '2021-11-14 19:52:33', '2323e', 'wew', 'ewewewe', '2018', '23', '33', '44', '333', '1', NULL),
-(3, '003-PSB-2022', '5656565', 5656565, 'Yulianto Dzaky', 'Laki-Laki', 'Cirebon', '04-05-2005', 'Islam', 3, 5, 0, 'Jalan Nangka RT 2 RW 20', '6289655420961', 'Teknik Komputer Jaringan (TKJ)', 'Rudi Salim', 'S1', 'Lain-lain ', '>10jt', '628448874744', 'Nagita Yanti', 'S2', 'TNI/POLRI', '>10jt', '628448874744', '', '', '', '', '', NULL, '2022-03-10 11:12:57', '00984545466', 'SMP Negeri 10 Cirebon', 'Jalan Raya Galon, Cirebon Utara', '2019', '85', '90', '80', '612', '1', NULL),
-(4, '004-PSB-2022', '0089765544', 89765544, 'Muhammad Irkham Maulana', 'Laki-Laki', 'Tegal', '15-01-2005', 'Islam', 3, 2, 0, 'Jalan Manggis RT 02 Rw 02 Kel. Procot', '6285800689339', 'Akuntansi', 'Fahrul', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retno', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:39:21', '6654334454556', 'SMP Negeri 1 Slawi', 'Jalan Nangka', '2019', '67', '75', '90', '452', NULL, NULL),
-(5, '005-PSB-2022', '0089765544', 89765544, 'Muhammad Irkham Maulana', 'Laki-Laki', 'Tegal', '15-01-2005', 'Islam', 3, 2, 0, 'Jalan Manggis RT 02 Rw 02 Kel. Procot', '6285800689339', 'Akuntansi', 'Fahrul', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retno', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:39:23', '6654334454556', 'SMP Negeri 1 Slawi', 'Jalan Nangka', '2019', '67', '75', '90', '452', NULL, NULL),
-(6, '006-PSB-2022', '7463587463', 2147483647, 'Irkham Maul', 'Laki-Laki', 'Debong', '05-03-2006', 'Islam', 3, 2, 0, 'Jalan Sawo', '6285800689339', 'Teknik Komputer Jaringan (TKJ)', 'Azis', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retnoyati', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:47:54', '097655', 'SMP Negeri 1 Slawi', 'Jalan Imam Bonjol', '2018', '85', '85', '75', '541', '0', NULL);
+INSERT INTO `tbl_siswa` (`id_siswa`, `no_pendaftaran`, `password`, `nisn`, `nama_lengkap`, `jk`, `tempat_lahir`, `tgl_lahir`, `agama`, `anak_ke`, `jml_saudara_kandung`, `jml_saudara_tiri`, `alamat_siswa`, `telp_siswa`, `pil_jurusan`, `nama_ayah`, `pdd_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `no_hp_ayah`, `nama_ibu`, `pdd_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`, `no_hp_ibu`, `nama_wali`, `pdd_wali`, `pekerjaan_wali`, `penghasilan_wali`, `no_hp_wali`, `foto`, `tgl_siswa`, `nomor_ijazah`, `asal_sekolah`, `alamat_sekolah`, `tahun_lulus`, `matematika`, `bahasa_indonesia`, `bahasa_inggris`, `ipa`, `rata_rata`, `status_verifikasi`, `status_pendaftaran`) VALUES
+(1, '001-PSB-2021', '1', 1, 'Nico Dwi Novianto', 'Laki-Laki', 'JAKARTA', '26-02-2004', 'Islam', 2, 2, 2, 'Mega mall ciputat', '082328251600', 'Teknik Komputer Jaringan (TKJ)', 'WEWE', 'SD/MI', 'Wiraswasta', '5jt-10jt', '2323', 'WEWEW', 'SD/MI', 'Ibu Rumah Tangga\r\n', '< 500rb', '23232', 'WEW', 'Tdk Sekolah', 'Buruh', '500-1jt', '2323232', NULL, '2021-11-14 19:50:42', 'WEW', 'EW', 'WEWEW', '2017', '80', '80', '80', '80', 80, '1', NULL),
+(2, '002-PSB-2021', '121212', 121212, 'Warmo', 'Laki-Laki', 'Bandung', '02-02-2004', 'Islam', 2, 3, 2, '3wewe', '23212', 'Teknik Kendaraan Ringan (TKR)', 'wewewe', 'Tdk Sekolah', 'PNS', '1jt-3jt', '2323', 'wewe', 'Tdk Sekolah', 'Buruh', '< 500rb', '2323', 'wew', 'Tdk Sekolah', 'Buruh', '500-1jt', '23223', NULL, '2021-11-14 19:52:33', '2323e', 'wew', 'ewewewe', '2018', '80', '80', '80', '80', 80, '1', NULL),
+(3, '003-PSB-2022', '5656565', 5656565, 'Yulianto Dzaky', 'Laki-Laki', 'Cirebon', '04-05-2005', 'Islam', 3, 5, 0, 'Jalan Nangka RT 2 RW 20', '6289655420961', 'Teknik Komputer Jaringan (TKJ)', 'Rudi Salim', 'S1', 'Lain-lain ', '>10jt', '628448874744', 'Nagita Yanti', 'S2', 'TNI/POLRI', '>10jt', '628448874744', '', '', '', '', '', NULL, '2022-03-10 11:12:57', '00984545466', 'SMP Negeri 10 Cirebon', 'Jalan Raya Galon, Cirebon Utara', '2019', '85', '85', '85', '85', 85, '1', NULL),
+(4, '004-PSB-2022', '0089765544', 89765544, 'Muhammad Irkham Maulana', 'Laki-Laki', 'Tegal', '15-01-2005', 'Islam', 3, 2, 0, 'Jalan Manggis RT 02 Rw 02 Kel. Procot', '6285800689339', 'Akuntansi', 'Fahrul', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retno', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:39:21', '6654334454556', 'SMP Negeri 1 Slawi', 'Jalan Nangka', '2019', '75', '75', '75', '75', 75, NULL, NULL),
+(5, '005-PSB-2022', '0089765544', 89765544, 'Muhammad Irkham Maulana', 'Laki-Laki', 'Tegal', '15-01-2005', 'Islam', 3, 2, 0, 'Jalan Manggis RT 02 Rw 02 Kel. Procot', '6285800689339', 'Akuntansi', 'Fahrul', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retno', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:39:23', '6654334454556', 'SMP Negeri 1 Slawi', 'Jalan Nangka', '2019', '90', '90', '90', '90', 90, NULL, NULL),
+(6, '006-PSB-2022', '7463587463', 2147483647, 'Irkham Maul', 'Laki-Laki', 'Debong', '05-03-2006', 'Islam', 3, 2, 0, 'Jalan Sawo', '6285800689339', 'Teknik Komputer Jaringan (TKJ)', 'Azis', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retnoyati', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:47:54', '097655', 'SMP Negeri 1 Slawi', 'Jalan Imam Bonjol', '2018', '90', '85', '80', '75', 82.5, '0', NULL),
+(7, '007-PSB-2022', '12', 12, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 22:59:18', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, NULL),
+(8, '008-PSB-2022', '121212', 121212, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 23:01:10', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, NULL),
+(9, '009-PSB-2022', '121212', 121212, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 23:01:48', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, NULL),
+(10, '010-PSB-2022', '121212122', 121212122, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 23:02:11', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -583,9 +603,11 @@ CREATE TABLE `tbl_ujian` (
 INSERT INTO `tbl_ujian` (`id_ujian`, `no_pend`, `no_test`, `nama`, `tanggal`, `ruang_ujian`, `nilai_pai`, `keterangan`) VALUES
 (1, '001-PSB-2021', '001-TEST-2021', 'Nico Dwi Novianto', NULL, '', 79, ''),
 (2, '002-PSB-2021', '002-TES-2021', 'Warmo', NULL, '', 90, ''),
-(3, '003-PSB-2022', '003-TES-2022', 'Yulianto Dzaky', NULL, '', 0, ''),
+(3, '003-PSB-2022', '003-TES-2022', 'Yulianto Dzaky', NULL, '', 90, ''),
 (4, '004-PSB-2022', '004-TES-2022', 'Muhammad Irkham Maulana', NULL, '', 0, ''),
-(5, '006-PSB-2022', '005-TES-2022', 'Irkham Maul', NULL, '', 0, '');
+(5, '006-PSB-2022', '005-TES-2022', 'Irkham Maul', NULL, '', 0, ''),
+(6, '007-PSB-2022', '006-TES-2022', 'asas', NULL, '', 0, ''),
+(7, '010-PSB-2022', '007-TES-2022', 'asas', NULL, '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -724,9 +746,8 @@ CREATE TABLE `tr_ikut_ujian` (
 --
 
 INSERT INTO `tr_ikut_ujian` (`id`, `id_tes`, `id_user`, `list_soal`, `list_jawaban`, `jml_benar`, `nilai`, `nilai_bobot`, `tgl_mulai`, `tgl_selesai`, `status`) VALUES
-(1, 1, 121212, '24,28,30,34,25,29,37,35,32,27,36,38,31,26,33', '24:A,28:A,30:A,34:B,25:C,29:E,37:D,35:C,32:A,27:B,36:B,38:B,31:A,26:B,33:C', 3, 20, 15, '2021-11-14 20:16:27', '2021-11-14 20:26:27', 'N'),
-(2, 1, 5656565, '31,30,35,29,28,24,26,37,32,36,33,34,25,38,27', '31:B,30:D,35:D,29:E,28:A,24:A,26:B,37:D,32:A,36:B,33:B,34:B,25:C,38:A,27:C', 4, 27, 20, '2022-03-10 11:34:55', '2022-03-10 11:44:55', 'N'),
-(3, 2, 5656565, '', ':', 1, 100, 0, '2022-03-11 09:19:14', '2022-03-11 09:20:14', 'N'),
+(1, 1, 121212, '24,28,30,34,25,29,37,35,32,27,36,38,31,26,33', '24:A,28:A,30:A,34:B,25:C,29:E,37:D,35:C,32:A,27:B,36:B,38:B,31:A,26:B,33:C', 3, 30, 15, '2021-11-14 20:16:27', '2021-11-14 20:26:27', 'N'),
+(2, 1, 5656565, '31,30,35,29,28,24,26,37,32,36,33,34,25,38,27', '31:B,30:D,35:D,29:E,28:A,24:A,26:B,37:D,32:A,36:B,33:B,34:B,25:C,38:A,27:C', 4, 50, 20, '2022-03-10 11:34:55', '2022-03-10 11:44:55', 'N'),
 (4, 3, 5656565, '43,53,44,39,47,40,48,45,52,46,50,41,51,42,49', '43:A,53:D,44:C,39:,47:,40:,48:,45:,52:,46:,50:,41:,51:,42:,49:', 0, 0, 0, '2022-03-30 09:02:48', '2022-03-30 09:12:48', 'N');
 
 -- --------------------------------------------------------
@@ -921,7 +942,7 @@ ALTER TABLE `tr_siswa_mapel`
 -- AUTO_INCREMENT for table `m_admin`
 --
 ALTER TABLE `m_admin`
-  MODIFY `id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `m_guru`
@@ -945,25 +966,25 @@ ALTER TABLE `m_soal`
 -- AUTO_INCREMENT for table `tbl_bakat`
 --
 ALTER TABLE `tbl_bakat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
-  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_nominal`
 --
 ALTER TABLE `tbl_nominal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_pdd`
@@ -999,7 +1020,7 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_rapor`
 --
 ALTER TABLE `tbl_rapor`
-  MODIFY `id_rapor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_rapor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tbl_ruang_ujian`
@@ -1011,13 +1032,13 @@ ALTER TABLE `tbl_ruang_ujian`
 -- AUTO_INCREMENT for table `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
-  MODIFY `id_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_ujian`
 --
 ALTER TABLE `tbl_ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

@@ -234,7 +234,7 @@
         <div class="form-group" >
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Tahun </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <select class="form-control bg-blue class" data-placeholder="Pilih Tahun prestasi" name="tahun_prestasi" data-parsley-group="block1" data-parsley-errors-container='div[id="error-tahun_prestasi"]' required>
+              <select class="form-control bg-blue class" data-placeholder="Pilih Tahun prestasi" name="tahun_prestasi" data-parsley-group="block1" data-parsley-errors-container='div[id="error-tahun_prestasi"]'>
           <option value="" selected>Pilih Tahun prestasi</option>
           <?php
           $thn_max=date('Y');
@@ -301,31 +301,45 @@
        <div class="form-group" >
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nilai Matematika </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <input type="text" name="mtk" id="mtk" class="form-control bg-blue class" maxlength="5"  placeholder="Nilai Matematika" data-parsley-group="block3" data-parsley-errors-container='div[id="error-mtk"]'>
+              <input type="number" name="mtk" id="mtk" class="form-control bg-blue class your_class" maxlength="5"  placeholder="Nilai Matematika" data-parsley-group="block3" data-parsley-errors-container='div[id="error-mtk"]'>
               <div id="error-mtk" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
         <div class="form-group" >
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nilai Bahasa Indonesia </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <input type="text" name="ind" id="ind" class="form-control bg-blue class" maxlength="5" placeholder="Nilai Bahasa Indonesia" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ind"]'>
+              <input type="number" name="ind" id="ind" class="form-control bg-blue class your_class" maxlength="5" placeholder="Nilai Bahasa Indonesia" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ind"]'>
+              <div id="error-ind" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
+            </div>
+        </div>
+        <div class="form-group" >
+            <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nilai Bahasa Inggris </label>
+            <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
+              <input type="number" name="ing" id="ing" class="form-control bg-blue class your_class" maxlength="5" placeholder="Nilai Bahasa Inggris" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ing"]'>
               <div id="error-ind" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
         <div class="form-group" >
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nilai I.P.A </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <input type="text" name="ipa" id="ipa" class="form-control bg-blue class" maxlength="5" placeholder="Nilai I.P.A" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ipa"]'>
+              <input type="number" name="ipa" id="ipa" class="form-control bg-blue class your_class" maxlength="5" placeholder="Nilai I.P.A" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ipa"]'>
               <div id="error-ipa" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
         <div class="form-group" >
-            <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Jumlah Nilai U.N</label>
+            <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Rata-Rata U.N</label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <input type="text" name="jml" id="jml" class="form-control bg-blue class" maxlength="15" placeholder="Jumlah Nilai Ujian Nasional" data-parsley-group="block3" data-parsley-errors-container='div[id="error-jml"]' readonly="">
+              <input type="text" name="jml" id="jml" class="form-control bg-blue class your_class" maxlength="15" placeholder="Jumlah Nilai Ujian Nasional" data-parsley-group="block3" data-parsley-errors-container='div[id="error-jml"]' readonly="">
               <div id="error-jml" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
+        <div class="form-group" >
+            <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px"></label>
+            <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
+              <small>Masukkan koma dengan tanda titik (.)</small>
+            </div>
+        </div>
+
   </div>
 </div>
 
@@ -337,19 +351,28 @@
   </blockquote>
 <div>
 <script type="text/javascript" src="assets/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
         $(".form-control").keyup(function() {
             var mtk  = parseFloat($("#mtk").val())
             var ind = parseFloat($("#ind").val())
+            var ing = parseFloat($("#ing").val())
             var ipa = parseFloat($("#ipa").val())
 
             mtk = isNaN(mtk) ? 0 : mtk
             ind = isNaN(ind) ? 0 : ind
+            ing = isNaN(ing) ? 0 : ing
             ipa = isNaN(ipa) ? 0 : ipa
 
-            var jml = (mtk * ind * ipa).toFixed(4);
+            var jml = ((mtk + ind + ing + ipa)/4).toFixed(2);
 
             $('#jml').attr("value",jml)
 
         });
+        document.querySelector(".your_class").addEventListener("keypress", function (evt) {
+    if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57)
+    {
+        evt.preventDefault();
+    }
+});
 </script>

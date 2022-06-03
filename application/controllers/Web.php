@@ -89,8 +89,9 @@ class Web extends CI_Controller
 			$tahun_lulus					= $this->input->post('tahun_lulus');
 			$mtk						= $this->input->post('mtk');
 			$ind				= $this->input->post('ind');
+			$ing				= $this->input->post('ing');
 			$ipa							= $this->input->post('ipa');
-			$total					= $this->input->post('jml');
+			$rata_rata					= ($this->input->post('mtk')+$this->input->post('ind')+$this->input->post('ing')+$this->input->post('ipa'))/4;
 			$tgl_siswa						= $this->Model_data->date('waktu_default');
 
 			$data = array(
@@ -129,8 +130,9 @@ class Web extends CI_Controller
 				'tahun_lulus'			=> $tahun_lulus,
 				'matematika'			=> $mtk,
 				'bahasa_indonesia'		=> $ind,
+				'bahasa_inggris'		=> $ing,
 				'ipa'	    			=> $ipa,
-				'jml_nilai_un'			=> $total,
+				'rata_rata'			=> $rata_rata,
 				//	'npsn_sekolah'  	    => $npsn,
 				'tgl_siswa'				=> $tgl_siswa,
 
@@ -229,7 +231,7 @@ class Web extends CI_Controller
 				'nama'					=> $nama_lengkap,
 				//		'nilai_bakat'				=> $nilai_bakat,
 				'nilai_rapot'				=> $rata,
-				'nilai_un'	    => $total,
+				'nilai_un'	    => $rata_rata,
 			);
 			$this->db->insert('tbl_nilai', $data_nilai);
 
