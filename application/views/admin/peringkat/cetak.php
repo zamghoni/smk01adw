@@ -33,10 +33,13 @@
   </head>
   <body onload="window.print();">
     <?php $this->load->view('kop_lap'); ?>
-    <h2 align="center" style="margin-top:0px;"><u>Data Peringkat Nilai</u></h2>
+    <h2 align="center" style="margin-top:0px;"><u>Data Pengumuman Hasil Seleksi</u></h2>
     <br>
-    <h4>Total Siswa Lulus : <?php
-                    echo number_format($this->db->get_where('tbl_nilai', "keterangan='lulus'")->num_rows(),0,",",".");  ?></h4>
+      <!-- <h4>Total Siswa Lulus :
+        <?php
+          echo number_format($this->db->get_where('tbl_nilai', "keterangan='lulus'")->num_rows(),0,",",".");
+        ?>
+      </h4> -->
 
     <table width="100%" border="0">
       <thead>
@@ -44,13 +47,12 @@
               <th width="30px;">No.</th>
               <th>No. Pendaftaran</th>
               <th>Nama Lengkap</th>
-              <th>Nilai Bakat</th>
-              <th>Nilai Rata2 Rapor</th>
-              <th>Jml Nilai UN</th>
-              <th>Nilai Ujian</th>
+              <th>Rata-Rata Nilai UN</th>
+              <th>Nilai Test Wawancara</th>
+              <th>Nilai CBT</th>
               <th>Total Nilai</th>
-              <th>Rata Rata Nilai</th>
-              <th>Peringkat</th>
+              <th>Rata-Rata Hasil</th>
+              <th>Keterangan</th>
             </tr>
           </thead>
           <tbody align="center">
@@ -59,20 +61,25 @@
               $peringkat = 1;
               foreach ($v_siswa->result() as $baris) {?>
                 <tr>
-                   <?php 
-                    $jumlah = $baris->nilai_bakat + $baris->nilai_rapot + $baris->nilai_un + $baris->nilai_seleksi; 
-              $rata = $jumlah/4;
-                   ?>
+                  <?php $hasil = ($baris->rata_rata+$baris->nilai_pai+$baris->nilai); ?>
+                  <?php $rata = $hasil/3 ?>
                   <td><?php echo $no++; ?></td>
                   <td><?php echo $baris->no_pendaftaran; ?></td>
                   <td><?php echo $baris->nama; ?></td>
-                  <td><?php echo $baris->nilai_bakat; ?></td>
-                  <td><?php echo $baris->nilai_rapot; ?></td>
-                  <td><?php echo $baris->nilai_un; ?></td>
-                  <td><?php echo $baris->nilai_seleksi; ?></td>
-                  <td><?php echo $jumlah; ?></td>
-                  <td><?php echo $rata; ?></td>
-                  <td>Peringkat <?php echo $peringkat++; ?></td>
+                  <td><?php echo round($baris->rata_rata,2); ?></td>
+                  <td><?php echo round($baris->nilai_pai,2); ?></td>
+                  <td><?php echo round($baris->nilai,2); ?></td>
+                  <td><?php echo round($hasil,2); ?></td>
+                  <td><?php echo round($rata,2); ?></td>
+                  <td align="center">
+                    <?php if ($rata < 70) {?>
+                      <label class="label label-danger">Tidak Lulus</label>
+                    <?php }else if($rata >= 70){ ?>
+                      <label class="label label-success">Lulus</label>
+                    <?php }else{ ?>
+                      <label>-</label>
+                    <?php } ?>
+                  </td>
                 </tr>
               <?php
               } ?>
@@ -93,11 +100,11 @@
             <br>
             <b> NIP: NIP.197105042005012011 </b>
             <br>
-            (Petugas PSB MTs Negeri Kota Tegal)
+            (Petugas PSB SMK NU 01 Adiwerna)
           </td>
         </tr>
       </table>
-    </div>  
+    </div>
 
     <br>
 

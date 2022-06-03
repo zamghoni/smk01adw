@@ -55,8 +55,8 @@
               $peringkat = 1;
               foreach ($v_siswa->result() as $baris) {?>
                 <tr>
-                   <?php 
-                    $jumlah = $baris->nilai_bakat + $baris->nilai_rapot + $baris->nilai_un + $baris->nilai_seleksi; 
+                   <?php
+                    $jumlah = $baris->nilai_bakat + $baris->nilai_rapot + $baris->nilai_un + $baris->nilai_seleksi;
               $rata = $jumlah/4;
                    ?>
                   <td><?php echo $no++; ?></td>
@@ -85,11 +85,11 @@
             <br>
             <b> NIP: NIP.197105042005012011 </b>
             <br>
-            (Petugas PSB MTs Negeri Kota Tegal)
+            (Petugas PSB SMK NU 01 Adiwerna)
           </td>
         </tr>
       </table>
-    </div>  
+    </div>
 
     <br>
 

@@ -639,7 +639,14 @@ class Panel_admin extends CI_Controller {
 		$data['user'] 		= $this->db->get('tbl_siswa')->row();
 		$data['judul_web'] 	= "Data Nilai Peringkat ";
 		$data['thn_ppdb'] 	= date('Y', strtotime($data['user']->tgl_siswa));
-		$data['v_siswa'] 	= $this->db->query("select * from tbl_nilai WHERE keterangan='lulus' ORDER BY rata_rata DESC");
+
+		$this->db->select('*');
+		$this->db->select_sum('nilai');
+		$this->db->from('tbl_siswa');
+		$this->db->join('tbl_ujian', 'no_pend = no_pendaftaran');
+		$this->db->join('tr_ikut_ujian', 'id_user = nisn');
+		$this->db->group_by("no_pendaftaran");
+		$data['v_siswa'] =  $this->db->get();
 
 		$this->load->view('admin/peringkat/cetak', $data);
 	}

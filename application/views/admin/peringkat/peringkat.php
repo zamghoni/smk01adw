@@ -13,7 +13,7 @@
           <h5 class="panel-title"> Master Kelulusan</h5>
           <hr style="margin:0px;">
           <br>
-          <a href="<?php echo base_url('panel_admin/peringkat_cetak'); ?>"><span class="btn btn-success">Cetak Data</span></a>
+          <a href="<?php echo base_url('panel_admin/peringkat_cetak'); ?>" target="_blank"><span class="btn btn-success">Cetak Data</span></a>
           <div class="col-md-3" style="float:right;margin-right:25px;">
           <div class="heading-elements">
             <ul class="icons-list">
@@ -23,7 +23,7 @@
 
       <br>
 
-                    
+
 
         </div>
         <div class="table-responsive">
@@ -32,7 +32,7 @@
             <tr>
               <th width="30px;">No.</th>
               <th>No. Pendaftaran</th>
-              <th>Jumlah Nilai UN</th>
+              <th>Rata-Rata Nilai UN</th>
               <th>Nilai Test Wawancara</th>
               <th>Nilai CBT</th>
               <th>Rata Rata Nilai</th>
@@ -45,14 +45,14 @@
               $no = 1;
               foreach ($v_siswa->result() as $baris) {?>
                 <tr>
-                  <?php $hasil = ($baris->jml_nilai_un)+($baris->nilai_pai)+($baris->nilai); ?>
-                  <?php $rata = $hasil/5 ?>
+                  <?php $hasil = ($baris->rata_rata)+($baris->nilai_pai)+($baris->nilai); ?>
+                  <?php $rata = $hasil/3 ?>
                   <td><?php echo $no++; ?></td>
                   <td><?php echo $baris->no_pendaftaran; ?></td>
-                  <td><?php echo $baris->jml_nilai_un; ?></td>
+                  <td><?php echo $baris->rata_rata; ?></td>
                   <td><?php echo $baris->nilai_pai; ?></td>
                   <td><?php echo $baris->nilai; ?></td>
-                  <td><?php echo $rata; ?></td>
+                  <td><?php echo round($rata,2); ?></td>
                   <td align="center">
                     <?php if ($rata < 70) {?>
                       <label class="label label-danger">Tidak Lulus</label>
@@ -87,4 +87,3 @@
   });
 
 </script>
-
