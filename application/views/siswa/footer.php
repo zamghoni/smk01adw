@@ -18,7 +18,7 @@
 
 <div class="navbar-collapse collapse" id="footer">
 <div class="navbar-text">
-  Copyright &copy; <?php echo date('Y'); ?> Sistem Informasi PSB <a href="#" target="_blank">Madrasah Tsanawiyah Negeri Kota Tegal</a> | Powered By <a href="#" target="_blank">Mukhamad Risqi</a>
+  Copyright &copy; <?php echo date('Y'); ?> Panel Admin PPDB <a href="#" target="_blank">SMK NU 01 ADIWERNA</a> | Powered By <a href="#" target="_blank">Mukhamad Zaky Yulianto</a>
 </div>
 
 <!-- <div class="navbar-right">

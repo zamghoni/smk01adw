@@ -19,7 +19,7 @@
           </div>
 
                     <br>
-                    <a href="panel_admin/edit_nominal" class="btn btn-primary">Edit Rincian Pembayaran</a>
+                    <a href="panel_admin/edit_nominal" class="btn btn-primary">Rincian Pembayaran</a>
 
         </div>
         <div class="table-responsive">
@@ -76,7 +76,7 @@
         <div class="panel panel-flat">
           <div class="panel-body">
             <img width="500" height="535" src="<?php echo base_url().'files/bukti_pembayaran/'.$baris->bukti ?> ?>">
-              
+
           </div>
       </div>
       </div>
