@@ -32,12 +32,13 @@
             <tr>
               <th width="30px;">No.</th>
               <th>No. Pendaftaran</th>
+              <th>Nama Pendaftar</th>
               <th>Rata-Rata Nilai UN</th>
               <th>Nilai Test Wawancara</th>
               <th>Nilai CBT</th>
               <th>Rata Rata Nilai</th>
               <th>Keterangan</th>
-              <th>Aksi</th>
+              <!-- <th>Aksi</th> -->
             </tr>
           </thead>
           <tbody>
@@ -49,6 +50,7 @@
                   <?php $rata = $hasil/3 ?>
                   <td><?php echo $no++; ?></td>
                   <td><?php echo $baris->no_pendaftaran; ?></td>
+                  <td><?php echo $baris->nama; ?></td>
                   <td><?php echo $baris->rata_rata; ?></td>
                   <td><?php echo $baris->nilai_pai; ?></td>
                   <td><?php echo $baris->nilai; ?></td>
@@ -62,9 +64,9 @@
                       <label>-</label>
                     <?php } ?>
                   </td>
-                 <td align="center">
+                 <!-- <td align="center">
                     <a href="panel_admin/cetak_data_nilai/<?php echo $baris->no_pendaftaran; ?>" class="btn btn-default btn-xs" title="Cetak Data Nilai" target="_blank"><i class="glyphicon glyphicon-print"></i></a>
-                  </td>
+                  </td> -->
                 </tr>
               <?php
               } ?>
