@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title><?php echo $judul_web; ?></title>
     <base href="<?php echo base_url();?>"/>
-  	<link rel="icon" type="image/png" href="img/logo_mts.png"/>
+  	<link rel="icon" type="image/png" href="assets/panel/images/download.png">
     <style>
     table {
         border-collapse: collapse;

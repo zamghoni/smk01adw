@@ -36,12 +36,10 @@
                   </div>
                 </div>
 
-
-                <!--
                 <div class="form-group">
-                  <label class="control-label col-lg-3">Nilai Bakat</label>
+                  <label class="control-label col-lg-3">Rata-Rata Nilai UN</label>
                   <div class="col-lg-9">
-                    <input type="text" name="nilai_bakat" class="form-control" value="<?php echo $nilai->nilai_bakat; ?>" placeholder="Nilai Ujian Seleksi" maxlength="5" readonly>
+                    <input type="text" name="rata_rata" class="form-control" value="<?php echo $nilai->rata_rata; ?>" placeholder="Rata-Rata Nilai UN" maxlength="5" readonly>
                   </div>
                 </div>
                 <div class="form-group">
@@ -55,9 +53,9 @@
                   <div class="col-lg-9">
                     <input type="text" name="nilai_un" class="form-control" value="<?php echo $nilai->nilai_un; ?>" placeholder="Nilai Ujian Seleksi" maxlength="5" readonly>
                   </div>
-                </div> -->
+                </div>
                 <div class="form-group">
-                  <label class="control-label col-lg-3">Nilai PAI (Seleksi)</label>
+                  <label class="control-label col-lg-3">Nilai Tes Wawancara</label>
                   <div class="col-lg-9">
                     <input type="text" name="nilai_seleksi" class="form-control" value="<?php echo $ujian->nilai_pai; ?>" placeholder="Nilai Ujian Seleksi" maxlength="5" readonly>
                   </div>

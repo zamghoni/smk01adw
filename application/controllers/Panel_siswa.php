@@ -30,6 +30,8 @@ class Panel_siswa extends CI_Controller {
 			$data['judul_web'] = "Pengumuman";
 			$data['foto']  			= $this->db->get_where('tbl_foto', "no_pendaftaran='$ceks'");
 
+			$data['ujian']	  		= $this->db->get('tbl_ujian')->row();
+
 			$this->load->view('siswa/header', $data);
 			$this->load->view('siswa/pengumuman', $data);
 			$this->load->view('siswa/footer');
@@ -47,7 +49,7 @@ class Panel_siswa extends CI_Controller {
 			$data['bakat']  			= $this->db->get_where('tbl_bakat', "no_pendaftaran='$ceks'");
 			$data['ujian']  			= $this->db->get_where('tbl_ujian', "no_pend='$ceks'");
 			$data['foto']  			= $this->db->get_where('tbl_foto', "no_pendaftaran='$ceks'");
-			
+
 			$this->db->select('*');
 	        $this->db->from('tbl_pembayaran');
 	        $this->db->where('pendaftaran', $ceks);
@@ -131,7 +133,7 @@ class Panel_siswa extends CI_Controller {
 			$config['upload_path']		=	'./img/siswa';
 			$config['allowed_types']	=	'jpg|png|jpeg';
 			$this->load->library('upload',$config);
-	
+
 		if($this->upload->do_upload('foto')){
 			$foto = $this->upload->data('file_name');
 			$data = array(
@@ -140,9 +142,9 @@ class Panel_siswa extends CI_Controller {
 			$where = array(
 				'no_pendaftaran' => $no_pendaftaran
 			);
-			
+
 		$this->M_Global->update_data($where,$data,'tbl_foto');
-		redirect('panel_siswa/biodata');	
+		redirect('panel_siswa/biodata');
 	}else{
 		echo "Upload gagal Harap Cek Gambar"; die();
 	}
@@ -200,7 +202,7 @@ class Panel_siswa extends CI_Controller {
 		$data['user'] 			= $this->db->get_where('tbl_siswa', "no_pendaftaran='$ceks'")->row();
 		$data['judul_web'] 	= "Cetak Bukti Lulus ".ucwords($data['user']->nama_lengkap);
 
-		if ($data['user']->status_pendaftaran != 'lulus') {
+		if ($data['user']->status_pendaftaran != 'Lulus') {
 			redirect('404');
 		}
 
@@ -211,6 +213,7 @@ class Panel_siswa extends CI_Controller {
 	}
 	public function cetak_nilai() {
 		$ceks = $this->session->userdata('no_pendaftaran');
+		$nisn = $this->session->userdata('nisn');
 		if(!isset($ceks)) {
 			redirect('logcs');
 		}
@@ -218,7 +221,7 @@ class Panel_siswa extends CI_Controller {
 		$data['user'] 			= $this->db->get_where('tbl_siswa', "no_pendaftaran='$ceks'")->row();
 		$data['judul_web'] 	= "Cetak Bukti Lulus ".ucwords($data['user']->nama_lengkap);
 
-		if ($data['user']->status_pendaftaran != 'lulus') {
+		if ($data['user']->status_pendaftaran != 'Lulus') {
 			redirect('404');
 		}
 
@@ -226,8 +229,9 @@ class Panel_siswa extends CI_Controller {
 		$data['bakat'] 	= $this->db->get_where('tbl_bakat', "no_pendaftaran='$ceks'")->row();
 		$data['un'] 	= $this->db->get_where('tbl_siswa', "no_pendaftaran='$ceks'")->row();
 		$data['rapor'] 	= $this->db->get_where('tbl_rapor', "no_pendaftaran='$ceks'")->row();
-		$data['pai'] 	= $this->db->get_where('tbl_ujian', "no_pendaftaran='$ceks'")->row();
+		$data['pai'] 	= $this->db->get_where('tbl_ujian', "no_pend='$ceks'")->row();
 		$data['nilai'] 	= $this->db->get_where('tbl_nilai', "no_pendaftaran='$ceks'")->row();
+		$data['cbt'] 	= $this->db->get_where('tr_ikut_ujian', "id_user= '$nisn'")->row();
 
 		$this->load->view('siswa/rekap_akhir', $data);
 	}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 // WWW.MALASNGODING.COM === Author : Diki Alfarabi Hadi
-// Model yang terstruktur. agar bisa digunakan berulang kali untuk membuat CRUD. 
+// Model yang terstruktur. agar bisa digunakan berulang kali untuk membuat CRUD.
 // Sehingga proses pembuatan CRUD menjadi lebih cepat dan efisien.
 
 class M_Global extends CI_Model{
@@ -29,14 +29,23 @@ class M_Global extends CI_Model{
 	}
 	function cek_jadwal($table,$where){
 		return $this->db->get_where($table,$where);
-	}		
+	}
 	public function addPhoto($data){
-            $sql = $this->db->insert('tbl_foto',$data);
-            if($sql){
-                return true;
-            } else{
-                return false;
-            }
-        }
+		$sql = $this->db->insert('tbl_foto',$data);
+		if($sql){
+			return true;
+		} else{
+			return false;
+		}
+	}
+
+	public function update_ket($id)
+	{
+		$params = [
+			'status_pendaftaran' => $this->uri->segment(4),
+		];
+		$this->db->where('no_pendaftaran', $id);
+		$this->db->update('tbl_siswa', $params);
+	}
 }
 ?>

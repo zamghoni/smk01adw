@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title><?php echo $judul_web; ?></title>
     <base href="<?php echo base_url();?>"/>
-  	<link rel="icon" type="image/png" href="assets/panel/images/logo_mts.png"/>
+  	<link rel="icon" type="image/png" href="assets/panel/images/download.png">
     <style>
     table {
         border-collapse: collapse;
@@ -86,33 +86,32 @@
         <th>Nilai</th>
       </tr>
       <tr>
-        <td>Nilai Bakat</td>
-        <td align="center"><?php echo $nilai->nilai_bakat; ?></td>
+        <td>Nilai Rata-Rata UN</td>
+        <td align="center"><?php echo $un->rata_rata; ?></td>
+      </tr>
+      <tr>
+        <td>Nilai Tes Wawancara</td>
+        <td align="center"><?php echo $pai->nilai_pai; ?></td>
+      </tr>
+        <td>Nilai Ujian Seleksi CBT</td>
+        <td align="center"><?php echo $cbt->nilai; ?></td>
       </tr>
       <tr>
         <td>Nilai Rata Rata Raport Sem.4,5,6</td>
         <td align="center"><?php echo $nilai->nilai_rapot; ?></td>
-      </tr>
-      <tr>
-        <td>Nilai Ujian Nasional</td>
-        <td align="center"><?php echo $nilai->nilai_un; ?></td>
-      </tr>
-      <tr>
-        <td>Nilai Ujian Seleksi</td>
-        <td align="center"><?php echo $nilai->nilai_seleksi; ?></td>
-      </tr>
-      <?php 
-      $jumlah = $nilai->nilai_bakat + $nilai->nilai_rapot + $nilai->nilai_un + $nilai->nilai_seleksi;
+        <tr>
+      <?php
+      $jumlah = $un->rata_rata + $pai->nilai_pai + $cbt->nilai + $nilai->nilai_rapot;
       $rata = $jumlah/4;
        ?>
-    
+
       <tr>
-        <th>Jumlah</th>
+        <th>Jumlah Score</th>
         <th><?php echo $jumlah; ?></th>
       </tr>
       <tr>
-        <th>Rata - Rata</th>
-        <th><?php echo $rata; ?></th>
+        <th>Rata - Rata Score</th>
+        <th><?php echo round($rata,2); ?></th>
       </tr>
     </table>
     <br><br>

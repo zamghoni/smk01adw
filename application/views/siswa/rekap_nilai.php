@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title><?php echo $judul_web; ?></title>
     <base href="<?php echo base_url();?>"/>
-  	<link rel="icon" type="image/png" href="assets/panel/images/download.png"/>
+  	<link rel="icon" type="image/png" href="assets/panel/images/download.png">
     <style>
     table {
         border-collapse: collapse;
@@ -104,9 +104,9 @@
         <td><?php echo number_format($ipa->semester4,2,",","."); ?></td>
         <td><?php echo number_format($ipa->semester5,2,",","."); ?></td>
         <td><?php echo number_format($ipa->rata_rata_nilai,2,",","."); ?></td>
-        
+
       </tr>
- 
+
       <tr align="center">
         <td align="left">Matematika</td>
         <?php
@@ -118,7 +118,7 @@
         <td><?php echo number_format($mtk->semester4,2,",","."); ?></td>
         <td><?php echo number_format($mtk->semester5,2,",","."); ?></td>
         <td><?php echo number_format($mtk->rata_rata_nilai,2,",","."); ?></td>
-        
+
       </tr>
       <tr align="center">
         <td align="left">Bahasa Indonesia</td>
@@ -131,7 +131,7 @@
         <td><?php echo number_format($ind->semester4,2,",","."); ?></td>
         <td><?php echo number_format($ind->semester5,2,",","."); ?></td>
         <td><?php echo number_format($ind->rata_rata_nilai,2,",","."); ?></td>
-        
+
       </tr>
       <tr align="center">
         <td align="left">Bahasa Inggris</td>
@@ -144,10 +144,10 @@
         <td><?php echo number_format($ing->semester4,2,",","."); ?></td>
         <td><?php echo number_format($ing->semester5,2,",","."); ?></td>
         <td><?php echo number_format($ing->rata_rata_nilai,2,",","."); ?></td>
-       
+
       </tr>
-      
-      
+
+
       <tr>
         <th colspan="6">Jumlah</th>
         <th><?php echo number_format($nilai_rapor,2,",","."); ?></th>

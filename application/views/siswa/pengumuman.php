@@ -14,7 +14,7 @@
     <!-- Dashboard content -->
     <div class="row">
       <!-- Basic datatable -->
-    <?php if ($cek->status_pendaftaran == 'lulus') {?>
+    <?php if ($cek->status_pendaftaran == 'Lulus') {?>
       <div class="panel panel-success">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -32,7 +32,7 @@
           </h3>
         </div>
       </div>
-    <?php }elseif ($cek->status_pendaftaran == 'tidak lulus') { ?>
+    <?php }elseif ($cek->status_pendaftaran == 'Tidak-lulus') { ?>
       <div class="panel panel-warning">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -59,8 +59,19 @@
         </div>
         <div class="panel-body">
           <h3>
-            <center>~ Belum ada Pengumuman dari Panitia PSB Online SMK NU 01 Adiwerna ~</center>
+            A. Tes Wawancara pada tanggal :  Pukul 08.00 - 15.00 Di SMK NU 01 Adiwerna <br> <br>
+            B. Tes CBT klik pada link berikut
+            <form action="<?= base_url('cbt/adm/act_login_sso') ?>" method="POST">
+              <input type="hidden" name="username" value="<?= $this->session->userdata('no_pendaftaran')  ?>">
+              <input type="hidden" name="password" value="<?= $this->session->userdata('nisn') ?>">
+              <button type="submit" class="btn btn-primary" style="color: white;">
+                <span>Masuk Ruang Ujian</span></button>
+            </form>
+            <!-- <center>~ Belum ada Pengumuman dari Panitia PSB Online SMK NU 01 Adiwerna ~</center> -->
           </h3>
+          <p>Informasi PPDB Hub. 08157775454 / Whatsapp Kami :
+            <a href="https://wa.me/628157775454" target="_blank">Klik Disini</a>
+          </p>
         </div>
       </div>
     <?php } ?>

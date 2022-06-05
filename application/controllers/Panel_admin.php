@@ -240,6 +240,23 @@ class Panel_admin extends CI_Controller {
 		}
 	}
 
+	public function peringkat_ket_update($id)
+  {
+    $this->M_Global->update_ket($this->uri->segment(3));
+    if ($this->db->affected_rows() > 0) {
+			$this->session->set_flashdata('msg',
+				'
+				<div class="alert alert-success alert-dismissible" role="alert">
+					 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						 <span aria-hidden="true">&times;&nbsp; &nbsp;</span>
+					 </button>
+					 <strong>Sukses!</strong> Data berhasil diperbarui.
+				</div>'
+			);
+    }
+      redirect('panel_admin/peringkat');
+  }
+
 	public function verifikasi($aksi='', $id='')
 	{
 		$ceks = $this->session->userdata('mts@negerikotategal');
@@ -386,7 +403,7 @@ class Panel_admin extends CI_Controller {
 			$data['tbl_nilai'] 		= $this->Model_data->getData_Global('tbl_nilai')->result();
 			$data['judul_web'] 		= "Edit Data Nilai";
 
-			$data['ujian']  		= $this->db->get_where('tbl_ujian', "no_pendaftaran='$id'")->row();
+			$data['ujian']  		= $this->db->get_where('tbl_ujian', "no_pend='$id'")->row();
 			$data['nilai']  		= $this->db->get_where('tbl_nilai', "no_pendaftaran='$id'")->row();
 
 					$this->load->view('admin/header', $data);

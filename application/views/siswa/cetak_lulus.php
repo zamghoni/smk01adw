@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title><?php echo $judul_web; ?></title>
     <base href="<?php echo base_url();?>"/>
-  	<link rel="icon" type="image/png" href="img/logo_mts.png"/>
+  	<link rel="icon" type="image/png" href="assets/panel/images/download.png">
     <style>
     table {
         border-collapse: collapse;
@@ -39,7 +39,7 @@
     <br>
     <table width="100%" border="0">
       <tr>
-        <td colspan="3">Kepala MTs Negeri Kota Tegal dengan ini menyatakan bahwa :</td>
+        <td colspan="3">Kepala SMK NU 01 Adiwerna dengan ini menyatakan bahwa :</td>
       </tr>
       <tr>
         <td width="200">No. Pendaftaran </td>
@@ -116,18 +116,18 @@
     </center>
     <br>
 
-    Seleksi Sebagai Calon Siswa Baru MTs Negeri Kota Tegal tahun ajaran <?php echo $thn_ppdb; ?>/<?php echo $thn_ppdb+1; ?>.<br>
+    Seleksi Sebagai Calon Siswa Baru SMK NU 01 Adiwerna tahun ajaran <?php echo $thn_ppdb; ?>/<?php echo $thn_ppdb+1; ?>.<br>
     Demikian pengumuman ini disampaikan untuk dapat digunakan sebagai mestinya.
     <br><br>
 
     <div style="float:right;">
       Tegal, <?php echo date('d-m-Y'); ?> <br>
-			Kepala Madrasah,  <br>
+			Kepala Sekolah,  <br>
       <br>
 	  <br>
 	  <br>
 	  <br>
-    <?php 
+    <?php
 
     $kepsek = $this->db->get('tbl_web')->result();
         foreach ($kepsek as $row){

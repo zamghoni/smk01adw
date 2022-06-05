@@ -20,11 +20,7 @@
               <li><a data-action="collapse"></a></li>
             </ul>
           </div>
-
       <br>
-
-
-
         </div>
         <div class="table-responsive">
         <table class="table datatable-basic table-bordered" width="100%">
@@ -38,7 +34,7 @@
               <th>Nilai CBT</th>
               <th>Rata Rata Nilai</th>
               <th>Keterangan</th>
-              <!-- <th>Aksi</th> -->
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -64,9 +60,14 @@
                       <label>-</label>
                     <?php } ?>
                   </td>
-                 <!-- <td align="center">
-                    <a href="panel_admin/cetak_data_nilai/<?php echo $baris->no_pendaftaran; ?>" class="btn btn-default btn-xs" title="Cetak Data Nilai" target="_blank"><i class="glyphicon glyphicon-print"></i></a>
-                  </td> -->
+                 <td align="center">
+                   <?php if ($baris->status_pendaftaran != null){ ?>
+                     <p class="label label-success">Terkirim</p>
+                   <?php }else{ ?>
+                     <a href="panel_admin/peringkat_ket_update/<?=$baris->no_pendaftaran?>/<?php if ($rata < 70) {?>Tidak-lulus<?php }else if($rata >= 70){ ?>Lulus<?php } ?>" class="label label-primary btn-xs" title="Buat Pengumuman"> <i class="glyphicon glyphicon-send" target="_blank"></i> Buat Pengumuman</a>
+                   <?php } ?>
+                    <!-- <a href="panel_admin/cetak_data_nilai/<?php echo $baris->no_pendaftaran; ?>" class="btn btn-default btn-xs" title="Cetak Data Nilai" target="_blank"><i class="glyphicon glyphicon-print"></i></a> -->
+                  </td>
                 </tr>
               <?php
               } ?>
