@@ -58,9 +58,20 @@
           </h3>
         </div>
         <div class="panel-body">
-          <h3>
-            A. Tes Wawancara pada tanggal :  Pukul 08.00 - 15.00 Di SMK NU 01 Adiwerna <br> <br>
-            B. Tes CBT klik pada link berikut
+          <div class="alert alert-danger alert-dismissible" role="alert">
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;&nbsp;</span>
+             </button>
+             Terus pantau halaman pengumuman ini, Pengumuman Kelulusan akan tampil pada halaman ini ketika sudah Tes Wawancara dan Tes CBT
+          </div>
+          <h3>A. Tes Wawancara pada tanggal : </h3>
+            <h5>
+              <?=longdate_indo($tanggal_ujian->tgl_ujian)?>
+              <br> Pukul 08.00 - 15.00
+              <br> Di SMK NU 01 Adiwerna <br>
+            </h5>
+
+            <h3>B. Tes CBT klik pada link berikut: </h3>
             <form action="<?= base_url('cbt/adm/act_login_sso') ?>" method="POST">
               <input type="hidden" name="username" value="<?= $this->session->userdata('no_pendaftaran')  ?>">
               <input type="hidden" name="password" value="<?= $this->session->userdata('nisn') ?>">
@@ -68,10 +79,9 @@
                 <span>Masuk Ruang Ujian</span></button>
             </form>
             <!-- <center>~ Belum ada Pengumuman dari Panitia PSB Online SMK NU 01 Adiwerna ~</center> -->
-          </h3>
-          <p>Informasi PPDB Hub. 08157775454 / Whatsapp Kami :
+          <h5>Informasi PPDB Hub. 08157775454 / Whatsapp Kami :
             <a href="https://wa.me/628157775454" target="_blank">Klik Disini</a>
-          </p>
+          </h5>
         </div>
       </div>
     <?php } ?>

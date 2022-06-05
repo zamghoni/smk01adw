@@ -26,10 +26,10 @@ class Panel_siswa extends CI_Controller {
 		if(!isset($ceks)) {
 			redirect('');
 		}else{
-			$data['user']   	 = $this->db->get_where('tbl_siswa', "no_pendaftaran='$ceks'");
-			$data['judul_web'] = "Pengumuman";
-			$data['foto']  			= $this->db->get_where('tbl_foto', "no_pendaftaran='$ceks'");
-
+			$data['user']   	 		= $this->db->get_where('tbl_siswa', "no_pendaftaran='$ceks'");
+			$data['judul_web'] 		= "Pengumuman";
+			$data['foto']  				= $this->db->get_where('tbl_foto', "no_pendaftaran='$ceks'");
+			$data['tanggal_ujian']	  = $this->db->get('tbl_web')->row();
 			$data['ujian']	  		= $this->db->get('tbl_ujian')->row();
 
 			$this->load->view('siswa/header', $data);
