@@ -731,6 +731,7 @@ class Panel_admin extends CI_Controller {
 		}else{
 			$data['user']  			  = $this->db->get_where('tbl_user', "username='$ceks'");
 			$data['judul_web'] 		= "Setting Pengumuman";
+			$data['v_ket']	  		= $this->db->get_where('tbl_pengumuman', "id_pengumuman='1'")->row();
 
 			if ($aksi == 'lulus') {
 				$data = array(
