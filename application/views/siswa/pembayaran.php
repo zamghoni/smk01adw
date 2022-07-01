@@ -35,7 +35,7 @@ $aa = $asa->row();
                       <label class="label label-danger">Belum Lunas</label>
                     <?php } ?></label>
                     </div>
- 
+
 
               </fieldset>
               <fieldset class="content-group">
@@ -133,7 +133,7 @@ $aa = $asa->row();
                 <div class="form-group">
                   <label class="control-label col-lg-3">Jenis Pembayaran</label>
                   <div class="col-lg-9">
-                    <select name="jenis_pembayaran" class="form-control" >
+                    <select name="jenis_pembayaran" class="form-control" required >
                         <option value="">- Pilih -</option>
                         <option value="1">Bayar Pendaftaran</option>
                         <option value="2">Bayar Daftar Ulang</option>
@@ -143,13 +143,13 @@ $aa = $asa->row();
                 <div class="form-group">
                   <label class="control-label col-lg-3">Jumlah Bayar</label>
                   <div class="col-lg-9">
-                    <input type="text" name="jumlah" class="form-control" maxlength="100">
+                    <input type="number" name="jumlah" class="form-control" maxlength="100" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-lg-3">Upload Bukti</label>
                   <div class="col-lg-9">
-                    <input type="file" name="bukti" class="form-control">
+                    <input type="file" name="bukti" class="form-control" required>
                   </div>
                 </div>
             </fieldset>
