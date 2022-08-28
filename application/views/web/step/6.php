@@ -31,7 +31,7 @@
         <td>Ilmu Pengetahuan Alam (IPA)</td>
         <?php for ($i=1; $i <=5 ; $i++) {?>
         <td>
-          <input type="text" name="ipa<?php echo $i;?>" value="" onkeyup="hitung('ipa');" id="tbl_input" maxlength="3" data-parsley-group="block5" data-parsley-errors-container='div[id="error-ipa<?php echo $i;?>"]' required>
+          <input type="text" name="ipa<?php echo $i;?>" value="" onkeyup="hitung('ipa');" id="tbl_input" maxlength="2" data-parsley-group="block5" data-parsley-errors-container='div[id="error-ipa<?php echo $i;?>"]' required>
           <div id="error-ipa<?php echo $i;?>" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
         </td>
         <?php } ?>
@@ -40,12 +40,12 @@
           <input type="hidden" name="nilai_ipa" value="0">
         </td>
       </tr>
-	  
+
       <tr>
         <td>Matematika </td>
         <?php for ($i=1; $i <=5 ; $i++) {?>
         <td>
-          <input type="text" name="mtk<?php echo $i;?>" value="" onkeyup="hitung('mtk');" id="tbl_input" maxlength="3" data-parsley-group="block5" data-parsley-errors-container='div[id="error-mtk<?php echo $i;?>"]' required>
+          <input type="text" name="mtk<?php echo $i;?>" value="" onkeyup="hitung('mtk');" id="tbl_input" maxlength="2" data-parsley-group="block5" data-parsley-errors-container='div[id="error-mtk<?php echo $i;?>"]' required>
           <div id="error-mtk<?php echo $i;?>" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
         </td>
         <?php } ?>
@@ -116,14 +116,14 @@ function hitung(name)
   var v3 = $('[name="'+name+'3"]').val();
   var v4 = $('[name="'+name+'4"]').val();
   var v5 = $('[name="'+name+'5"]').val();
- 
+
 
   if (v1 == '') {v1 = 0;}
   if (v2 == '') {v2 = 0;}
   if (v3 == '') {v3 = 0;}
   if (v4 == '') {v4 = 0;}
   if (v5 == '') {v5 = 0;}
-  
+
   jml = parseInt(v1)+parseInt(v2)+parseInt(v3)+parseInt(v4)+parseInt(v5);
   rata_rata = jml / 5;
   $('#nilai_'+name).text(rata_rata);

@@ -14,16 +14,16 @@
         <div id="pesan_komentar">*Sesuai dengan NISN</div>
       </div>
   </div>
+
   <div class="form-group" style="padding-bottom:30px;">
       <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nama Lengkap <span class="text-danger">*</span></label>
       <div class="col-sm-9 prepend-icon">
-        <input type="text" name="nama_lengkap" class="form-control bg-blue" placeholder="Nama lengkap Calon Siswa" maxlength="100" data-parsley-group="block1" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_lengkap"]' required>
+        <input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control bg-blue" placeholder="Nama lengkap Calon Siswa" maxlength="100" data-parsley-group="block1" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_lengkap"]' required>
         <i class="fa fa-user" style="margin-left:15px;"></i>
         <div id="error-nama_lengkap" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
         <div id="pesan_komentar">*Sesuai dengan ijazah</div>
       </div>
   </div>
-
 
   <div class="form-group">
       <label class="col-sm-3 control-label" style="text-align:right; margin-top:-3px">Jenis Kelamin <span class="text-danger">*</span></label>
@@ -46,11 +46,12 @@
   <div class="form-group">
       <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Tempat Kelahiran <span class="text-danger">*</span></label>
       <div class="col-sm-9 prepend-icon" >
-        <input type="text" name="tempat_lahir" class="form-control bg-blue class" placeholder="Tempat Kelahiran Calon Siswa" data-parsley-group="block1" data-parsley-errors-container='div[id="error-tempat_lahir"]' required>
+        <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control bg-blue class" placeholder="Tempat Kelahiran Calon Siswa" data-parsley-group="block1" data-parsley-errors-container='div[id="error-tempat_lahir"]' required>
         <i class="fa fa-building" style="margin-left:15px;"></i>
         <div id="error-tempat_lahir" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
       </div>
   </div>
+
  <div class="form-group" >
     <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Tanggal Kelahiran <span class="text-danger">*</span></label>
     <div class="col-sm-9" style="margin-top:3px;">
@@ -89,8 +90,8 @@
          <select class="form-control bg-blue class" data-placeholder="Pilih Tahun Lahir" name="thn_lahir" data-parsley-group="block1" data-parsley-errors-container='div[id="error-thn_lahir"]' required>
           <option value="" selected>Pilih Tahun Lahir</option>
           <?php
-          $thn_max=date('Y') - 13;
-          for ($i=2003; $i <= $thn_max; $i++) {?>
+          $thn_max=date('Y');
+          for ($i=1990; $i <= $thn_max; $i++) {?>
           <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
           <?php } ?>
          </select>
@@ -112,7 +113,7 @@
 <div class="form-group" style="padding-bottom:30px;">
         <label class="col-sm-3 control-label"style="text-align:right; margin-top:6px">Anak Ke- <span class="text-danger">*</span></label>
         <div class="col-sm-9 prepend-icon" style="margin-top:1px;">
-          <input type="text" name="anak_ke" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="1" placeholder="Anak Ke- " data-parsley-group="block1" data-parsley-errors-container='div[id="error-anak_ke"]' required>
+          <input type="text" name="anak_ke" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="2" placeholder="Anak Ke- " data-parsley-group="block1" data-parsley-errors-container='div[id="error-anak_ke"]' required>
           <i class="fa fa-users" style="margin-left:15px;"></i>
           <div id="error-anak_ke" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
         </div>
@@ -121,7 +122,7 @@
   <div class="form-group" style="padding-bottom:30px;">
       <label class="col-sm-3 control-label"style="text-align:right; margin-top:6px">Saudara Kandung <span class="text-danger">*</span></label>
       <div class="col-sm-9 prepend-icon" style="margin-top:1px;">
-        <input type="text" name="jml_saudara_kandung" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="1" placeholder="Jumlah Saudara Kandung" data-parsley-group="block1" data-parsley-errors-container='div[id="error-jml_saudara_kandung"]' required>
+        <input type="text" name="jml_saudara_kandung" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="2" placeholder="Jumlah Saudara Kandung" data-parsley-group="block1" data-parsley-errors-container='div[id="error-jml_saudara_kandung"]' required>
         <i class="fa fa-users" style="margin-left:15px;"></i>
         <div id="error-jml_saudara_kandung" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
       </div>
@@ -129,7 +130,7 @@
   <div class="form-group" style="padding-bottom:30px;">
       <label class="col-sm-3 control-label"style="text-align:right; margin-top:6px">Saudara Tiri</label>
       <div class="col-sm-9 prepend-icon" style="margin-top:1px;">
-        <input type="text" name="jml_saudara_tiri" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="1" placeholder="Jumlah Saudara Tiri" data-parsley-group="block1" data-parsley-errors-container='div[id="error-jml_saudara_tiri"]'>
+        <input type="text" name="jml_saudara_tiri" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="2" placeholder="Jumlah Saudara Tiri" data-parsley-group="block1" data-parsley-errors-container='div[id="error-jml_saudara_tiri"]'>
         <i class="fa fa-users" style="margin-left:15px;"></i>
         <div id="error-jml_saudara_tiri" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
       </div>
@@ -148,7 +149,8 @@
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">No. Handphone Siswa <span class="text-danger">*</span></label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
               <input type="text" name="telp_siswa" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="13" placeholder="No. Handphone Siswa" data-parsley-group="block2" data-parsley-errors-container='div[id="error-telp_siswa"]' required>
-              <i class="fa fa-phone" style="margin-left:15px;"></i>
+              <i class="fa fa-phone" style="margin-left:15px;"></i><br>
+              <small>Masukkan dengan format 62, Contoh 6289123432311</small>
               <div id="error-telp_siswa" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
@@ -158,20 +160,20 @@
 
       <div class="radio" style="margin-top:3px;margin-left:-20px;">
           <label>
-          <input type="radio" value="Teknik Kendaraan Ringan (TKR)" name="jurusan" data-parsley-group="block1" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="condition-error"]' required> <i class="fa fa-cogs"></i> &nbsp;Teknik Kendaraan Ringan (TKR)
+          <input type="radio" value="Teknik Kendaraan Ringan (TKR)" name="jurusan" data-parsley-group="block1" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="condition-error-jurusan"]' required> <i class="fa fa-cogs"></i> &nbsp;Teknik Kendaraan Ringan (TKR)
           </label>
         </div>
         <div class="radio" style="margin-left:-20px;">
           <label>
-          <input type="radio" value="Teknik Komputer Jaringan (TKJ)" name="jurusan" data-parsley-group="block1" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="condition-error"]' required> <i class="fa fa-desktop"></i> &nbsp;Teknik Komputer Jaringan (TKJ)
+          <input type="radio" value="Teknik Komputer Jaringan (TKJ)" name="jurusan" data-parsley-group="block1" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="condition-error-jurusan"]' required> <i class="fa fa-desktop"></i> &nbsp;Teknik Komputer Jaringan (TKJ)
           </label>
         </div>
         <div class="radio" style="margin-left:-20px;">
           <label>
-          <input type="radio" value="Akuntansi" name="jurusan" data-parsley-group="block1" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="condition-error"]' required> <i class="glyphicon glyphicon-list-alt"></i> &nbsp;Akuntansi
+          <input type="radio" value="Akuntansi" name="jurusan" data-parsley-group="block1" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="condition-error-jurusan"]' required> <i class="glyphicon glyphicon-list-alt"></i> &nbsp;Akuntansi
           </label>
         </div>
-        <div id="condition-error" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
+        <div id="condition-error-jurusan" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
       </div>
   </div>
 
@@ -195,7 +197,7 @@
       <div class="form-group" style="padding-bottom:30px;">
       <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nama Prestasi </label>
       <div class="col-sm-9 prepend-icon">
-        <input type="text" name="nama_prestasi" class="form-control bg-blue" placeholder="Nama Prestasi" maxlength="100" data-parsley-group="block3" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_prestasi"]'>
+        <input type="text" name="nama_prestasi" id="nama_prestasi" class="form-control bg-blue" placeholder="Nama Prestasi" maxlength="100" data-parsley-group="block3" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_prestasi"]'>
         <i class="fa fa-university" style="margin-left:15px;"></i>
         <div id="error-nama_prestasi" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
       </div>
@@ -238,7 +240,7 @@
           <option value="" selected>Pilih Tahun prestasi</option>
           <?php
           $thn_max=date('Y');
-          for ($i=2010; $i <= $thn_max; $i++) {?>
+          for ($i=2000; $i <= $thn_max; $i++) {?>
           <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
           <?php } ?>
          </select>
@@ -276,6 +278,21 @@
         <div id="error-asal_sekolah" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
       </div>
   </div>
+
+  <!-- setting input -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+  function testInput(event) {
+    var value = String.fromCharCode(event.which);
+    var pattern = new RegExp(/[a-zåäö ]/i);
+    return pattern.test(value);
+  }
+
+  $('#nama_lengkap').bind('keypress', testInput);
+  $('#tempat_lahir').bind('keypress', testInput);
+  $('#nama_prestasi').bind('keypress', testInput);
+  </script>
+
   <div class="form-group" style="padding-bottom:30px;">
       <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Alamat Sekolah <span class="text-danger">*</span></label>
       <div class="col-sm-9 prepend-icon">
@@ -298,31 +315,38 @@
          </select>
             </div>
         </div>
-       <div class="form-group" >
+
+        <input type="hidden" name="mtk" step="any" min="0" max="100" class="form-control bg-blue class your_class" placeholder="Nilai Matematika" data-parsley-group="block3" data-parsley-errors-container='div[id="error-mtk"]'>
+
+        <div class="form-group" >
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nilai Matematika </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <input type="number" name="mtk" id="mtk" class="form-control bg-blue class your_class" maxlength="5"  placeholder="Nilai Matematika" data-parsley-group="block3" data-parsley-errors-container='div[id="error-mtk"]'>
+              <input type="number" name="mtk" id="mtk" step="any" min="0" max="100" class="form-control bg-blue class your_class" placeholder="Nilai Matematika" data-parsley-group="block3" data-parsley-errors-container='div[id="error-mtk"]'><br>
+              <small>Masukkan koma dengan tanda titik (.)</small>
               <div id="error-mtk" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
         <div class="form-group" >
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nilai Bahasa Indonesia </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <input type="number" name="ind" id="ind" class="form-control bg-blue class your_class" maxlength="5" placeholder="Nilai Bahasa Indonesia" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ind"]'>
+              <input type="number" name="ind" id="ind" step="any" min="0" max="100" class="form-control bg-blue class your_class" placeholder="Nilai Bahasa Indonesia" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ind"]'><br>
+              <small>Masukkan koma dengan tanda titik (.)</small>
               <div id="error-ind" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
         <div class="form-group" >
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nilai Bahasa Inggris </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <input type="number" name="ing" id="ing" class="form-control bg-blue class your_class" maxlength="5" placeholder="Nilai Bahasa Inggris" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ing"]'>
+              <input type="number" name="ing" id="ing" step="any" min="0" max="100" class="form-control bg-blue class your_class" maxlength="4" placeholder="Nilai Bahasa Inggris" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ing"]'>
+              <small>Masukkan koma dengan tanda titik (.)</small>
               <div id="error-ind" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
         <div class="form-group" >
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nilai I.P.A </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <input type="number" name="ipa" id="ipa" class="form-control bg-blue class your_class" maxlength="5" placeholder="Nilai I.P.A" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ipa"]'>
+              <input type="number" name="ipa" id="ipa" step="any" min="0" max="100" class="form-control bg-blue class your_class" maxlength="4" placeholder="Nilai I.P.A" data-parsley-group="block3" data-parsley-errors-container='div[id="error-ipa"]'><br>
+              <small>Masukkan koma dengan tanda titik (.)</small>
               <div id="error-ipa" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
@@ -331,12 +355,6 @@
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
               <input type="text" name="jml" id="jml" class="form-control bg-blue class your_class" maxlength="15" placeholder="Jumlah Nilai Ujian Nasional" data-parsley-group="block3" data-parsley-errors-container='div[id="error-jml"]' readonly="">
               <div id="error-jml" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
-            </div>
-        </div>
-        <div class="form-group" >
-            <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px"></label>
-            <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
-              <small>Masukkan koma dengan tanda titik (.)</small>
             </div>
         </div>
 

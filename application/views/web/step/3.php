@@ -7,7 +7,7 @@
         <div class="form-group" style="padding-bottom:30px;">
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nama Lengkap <span class="text-danger">*</span></label>
             <div class="col-sm-9 prepend-icon">
-              <input type="text" name="nama_ayah" class="form-control bg-blue" placeholder="Nama lengkap Ayah"  maxlength="100" data-parsley-group="block2" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_ayah"]' required>
+              <input type="text" name="nama_ayah" id="nama_ayah" class="form-control bg-blue" placeholder="Nama lengkap Ayah"  maxlength="100" data-parsley-group="block2" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_ayah"]' required>
               <i class="fa fa-user" style="margin-left:15px;"></i>
               <div id="error-nama_ayah" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
@@ -56,7 +56,8 @@
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">No. Handphone </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
               <input type="text" name="no_hp_ayah" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="14" placeholder="No. Handphone Ayah" data-parsley-group="block2" data-parsley-errors-container='div[id="error-no_hp_ayah"]'>
-              <i class="fa fa-phone" style="margin-left:15px;"></i>
+              <i class="fa fa-phone" style="margin-left:15px;"></i><br>
+              <small>Masukkan dengan format 62, Contoh 6289123432311</small>
               <div id="error-no_hp_ayah" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
@@ -73,7 +74,7 @@
         <div class="form-group" style="padding-bottom:30px;">
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nama Lengkap <span class="text-danger">*</span></label>
             <div class="col-sm-9 prepend-icon">
-              <input type="text" name="nama_ibu" class="form-control bg-blue" placeholder="Nama lengkap Ibu"  maxlength="100" data-parsley-group="block2" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_ibu"]' required>
+              <input type="text" name="nama_ibu" id="nama_ibu" class="form-control bg-blue" placeholder="Nama lengkap Ibu"  maxlength="100" data-parsley-group="block2" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_ibu"]' required>
               <i class="fa fa-user" style="margin-left:15px;"></i>
               <div id="error-nama_ibu" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
@@ -122,7 +123,8 @@
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">No. Handphone </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
               <input type="text" name="no_hp_ibu" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="14" placeholder="No. Handphone Ibu" data-parsley-group="block2" data-parsley-errors-container='div[id="error-no_hp_ibu"]'>
-              <i class="fa fa-phone" style="margin-left:15px;"></i>
+              <i class="fa fa-phone" style="margin-left:15px;"></i><br>
+              <small>Masukkan dengan format 62, Contoh 6289123432311</small>
               <div id="error-no_hp_ibu" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
@@ -139,7 +141,7 @@
         <div class="form-group" style="padding-bottom:30px;">
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">Nama Lengkap </label>
             <div class="col-sm-9 prepend-icon">
-              <input type="text" name="nama_wali" class="form-control bg-blue" placeholder="Nama lengkap Wali"  maxlength="100" data-parsley-group="block2" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_wali"]'>
+              <input type="text" name="nama_wali" id="nama_wali" class="form-control bg-blue" placeholder="Nama lengkap Wali"  maxlength="100" data-parsley-group="block2" data-radio="iradio_square-blue" data-parsley-errors-container='div[id="error-nama_wali"]'>
               <i class="fa fa-user" style="margin-left:15px;"></i>
               <div id="error-nama_wali" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
@@ -188,7 +190,8 @@
             <label class="col-sm-3 control-label" style="text-align:right; margin-top:6px">No. Handphone </label>
             <div class="col-sm-9 prepend-icon" style="margin-top:3px;">
               <input type="text" name="no_hp_wali" class="form-control bg-blue class" onkeypress="return hanyaAngka(this);" maxlength="14" placeholder="No. Handphone Wali" data-parsley-group="block2" data-parsley-errors-container='div[id="error-no_hp_wali"]' >
-              <i class="fa fa-phone" style="margin-left:15px;"></i>
+              <i class="fa fa-phone" style="margin-left:15px;"></i><br>
+              <small>Masukkan dengan format 62, Contoh 6289123432311</small>
               <div id="error-no_hp_wali" style=" background:#FFBABA;color: #D8000C; width:auto;border-radius:5px;padding-left:10px;"></div>
             </div>
         </div>
@@ -202,3 +205,17 @@
     <p><b>CATATAN:</b> Field isian dengan tanda <span class="text-danger ">*</span><b class="text-danger">wajib diisi</b>.</p>
   </blockquote>
 <div>
+
+  <!-- setting input -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+  function testInput(event) {
+    var value = String.fromCharCode(event.which);
+    var pattern = new RegExp(/[a-zåäö ]/i);
+    return pattern.test(value);
+  }
+
+  $('#nama_ayah').bind('keypress', testInput);
+  $('#nama_ibu').bind('keypress', testInput);
+  $('#nama_wali').bind('keypress', testInput);
+  </script>
