@@ -165,12 +165,16 @@ $sub_menu3 = strtolower($this->uri->segment(3));
 								</li>
 								<!--Tambahan Form Daftar Ulang-->
 								<li class="<?php if($menu == 'panel_admin' AND $sub_menu == 'seleksi'){echo 'active';} ?>"><a href="panel_admin/daftar_ulang"><i class="glyphicon glyphicon-file"></i> <span>Daftar Ulang</span></a></li>
-								<li> 
+								<li>
 
 
 								<li class="<?php if($menu == 'panel_admin' AND $sub_menu == 'statistik'){echo 'active';} ?>"><a href="panel_admin/statistik"><i class="icon-stats-dots"></i> <span>Statistik Pendaftaran</span></a></li>
 								<!-- /Main -->
 								<!-- Data Lainnya -->
+								<li class="navigation-header"><span>Manajemen</span> <i class="icon-menu" title="Data visualization"></i></li>
+								<li class="<?php if($menu == 'panel_admin' AND $sub_menu == 'admin'){echo 'active';} ?>"><a href="admin"><i class="glyphicon glyphicon-user"></i> <span>Admin</span></a></li>
+								<li>
+
 								<li class="navigation-header"><span>Lainnya</span> <i class="icon-menu" title="Data visualization"></i></li>
 								<li>
 									<a href="panel_admin"><i class="icon-cog3"></i> <span>Pengaturan</span></a>
