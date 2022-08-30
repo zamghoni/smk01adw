@@ -152,12 +152,12 @@
       <tr>
         <td style="padding-left:55px;">Jumlah Nilai UN</td>
         <td >:</td>
-        <td><?php echo $user->jml_nilai_un;?></td>
+        <td><?php echo ($user->matematika+$user->bahasa_indonesia+$user->ipa);?></td>
       </tr>
-  </table> 
+  </table>
 
 <!--=================tambahan bakat=========================-->
-  <table width="80%" border="0"> 
+  <table width="80%" border="0">
       <tr>
         <td width="200">Nama Bakat </td>
         <td width="1">:</td>
@@ -227,9 +227,9 @@
         <td><?php echo number_format($ipa->semester4,2,",","."); ?></td>
         <td><?php echo number_format($ipa->semester5,2,",","."); ?></td>
         <td><?php echo number_format($ipa->rata_rata_nilai,2,",","."); ?></td>
-        
+
       </tr>
- 
+
       <tr align="center">
         <td align="left">Matematika</td>
         <?php
@@ -241,7 +241,7 @@
         <td><?php echo number_format($mtk->semester4,2,",","."); ?></td>
         <td><?php echo number_format($mtk->semester5,2,",","."); ?></td>
         <td><?php echo number_format($mtk->rata_rata_nilai,2,",","."); ?></td>
-        
+
       </tr>
       <tr align="center">
         <td align="left">Bahasa Indonesia</td>
@@ -254,7 +254,7 @@
         <td><?php echo number_format($ind->semester4,2,",","."); ?></td>
         <td><?php echo number_format($ind->semester5,2,",","."); ?></td>
         <td><?php echo number_format($ind->rata_rata_nilai,2,",","."); ?></td>
-        
+
       </tr>
       <tr align="center">
         <td align="left">Bahasa Inggris</td>
@@ -267,10 +267,10 @@
         <td><?php echo number_format($ing->semester4,2,",","."); ?></td>
         <td><?php echo number_format($ing->semester5,2,",","."); ?></td>
         <td><?php echo number_format($ing->rata_rata_nilai,2,",","."); ?></td>
-       
+
       </tr>
-      
-      
+
+
       <tr>
         <th colspan="6">Jumlah</th>
         <th><?php echo number_format($nilai_rapor,2,",","."); ?></th>
@@ -282,7 +282,7 @@
     </table>
     <br><br>
 <!--=======================================================================-->
-    
+
 <br>
 
 
@@ -310,13 +310,13 @@
           </td>
           <td>
             Tegal,...........................<?php echo $thn_ppdb; ?><br>
-            Verifikator, 
+            Verifikator,
             <br><br><br><br><br><br><br><br>
             _____________________________
             <br>
             <b>Hatin Azizah S.pd </b>
             <br>
-            <b> NIP: NIP.197105042005012011 </b>
+            <b>NIP.197105042005012011 </b>
             <br>
             (Petugas PSB SMK NU 01 Adiwerna)
           </td>
