@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2022 at 04:03 PM
+-- Generation Time: Sep 03, 2022 at 07:15 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -51,7 +51,8 @@ INSERT INTO `m_admin` (`id`, `username`, `password`, `level`, `kon_id`) VALUES
 (21, '003-PSB-2022', '77f3ffc196859645fe95aff266d57ef8', 'siswa', 5656565),
 (22, '004-PSB-2022', '3b980eb3322a393bab4867841c29f0ee', 'siswa', 89765544),
 (24, '007-PSB-2022', 'c20ad4d76fe97759aa27a0c99bff6710', 'siswa', 12),
-(26, '011-PSB-2022', 'e807f1fcf82d132f9bb018ca6738a19f', 'siswa', 1234567890);
+(26, '011-PSB-2022', 'e807f1fcf82d132f9bb018ca6738a19f', 'siswa', 1234567890),
+(27, '012-PSB-2022', '827ccb0eea8a706c4c34a16891f84e7b', 'siswa', 12345);
 
 -- --------------------------------------------------------
 
@@ -142,6 +143,7 @@ INSERT INTO `m_siswa` (`id_siswa`, `nama`, `nim`, `jurusan`) VALUES
 ('0089765544', 'Muhammad Irkham Maulana', '004-PSB-2022', 'Akuntansi'),
 ('1', 'Nico Dwi Novianto', '001-PSB-2021', 'Teknik Komputer Jaringan (TKJ)'),
 ('121212', 'Warmo', '002-PSB-2021', 'Teknik Kendaraan Ringan (TKR)'),
+('12345', 'agus', '012-PSB-2022', 'Teknik Komputer Jaringan (TKJ)'),
 ('1234567890', 'dzaki', '011-PSB-2022', 'Akuntansi'),
 ('5656565', 'Yulianto Dzaky', '003-PSB-2022', 'Teknik Komputer Jaringan (TKJ)'),
 ('7463587463', 'Irkham Maul', '006-PSB-2022', 'Teknik Komputer Jaringan (TKJ)');
@@ -233,7 +235,8 @@ INSERT INTO `tbl_bakat` (`id`, `nomor_piagam`, `no_pendaftaran`, `nama_prestasi`
 (5, '', '006-PSB-2022', 'Karate', 1, 'Nasional', 2021, 0),
 (6, '', '007-PSB-2022', '', 0, '', 0, 0),
 (7, '', '010-PSB-2022', '', 0, '', 0, 0),
-(8, '', '011-PSB-2022', '', 0, '', 0, 0);
+(8, '', '011-PSB-2022', '', 0, '', 0, 0),
+(9, '', '012-PSB-2022', '', 0, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -259,7 +262,8 @@ INSERT INTO `tbl_foto` (`id_foto`, `no_pendaftaran`, `nama_foto`) VALUES
 (5, '006-PSB-2022', 'logo-fl2mi.jpg'),
 (6, '007-PSB-2022', 'default.jpg'),
 (7, '010-PSB-2022', 'default.jpg'),
-(8, '011-PSB-2022', 'default.jpg');
+(8, '011-PSB-2022', 'default.jpg'),
+(9, '012-PSB-2022', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -292,7 +296,8 @@ INSERT INTO `tbl_nilai` (`id_nilai`, `no_pendaftaran`, `nama`, `nilai_bakat`, `n
 (4, '004-PSB-2022', 'Muhammad Irkham Maulana', 0, 81, 452250, 0, 0, 0, '', ''),
 (5, '006-PSB-2022', 'Irkham Maul', 0, 79, 541875, 0, 0, 0, '', ''),
 (6, '010-PSB-2022', 'asas', 0, 0, 77, 0, 0, 0, '', ''),
-(7, '011-PSB-2022', 'dzaki', 0, 90, 82, 0, 0, 0, '', '');
+(7, '011-PSB-2022', 'dzaki', 0, 90, 82, 0, 0, 0, '', ''),
+(8, '012-PSB-2022', 'agus', 0, 76, 75, 0, 0, 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -388,6 +393,13 @@ CREATE TABLE `tbl_pembayaran` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_pembayaran`
+--
+
+INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `jenis_pembayaran`, `pendaftaran`, `jumlah`, `bukti`, `status`) VALUES
+(2, 1, '003-PSB-2022', '250000', 'f5cd63fcf69857a54682240596f0c949.jpg', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -428,7 +440,7 @@ CREATE TABLE `tbl_pengumuman` (
 --
 
 INSERT INTO `tbl_pengumuman` (`id_pengumuman`, `ket_pengumuman`, `tgl_pengumuman`) VALUES
-(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Keterangan :</u></strong></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Registrasi daftar ulang dilaksanakan pada tanggal 8 &ndash; 11 Juli 2022&nbsp;pukul 08.00 &ndash; 14.00 </span></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;2. Mencetak dan membawa Surat Pengumuman ini sebagai bukti&nbsp; lulus seleksi</span></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp; &nbsp; &nbsp; &nbsp; 3.&nbsp;Membawa materai Rp. 10000,- sebanyak 2 lembar</span></span></span></span></p>\r\n</body>\r\n</html>\r\n', '2018-04-14 00:00:00');
+(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Keterangan :</u></strong></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Registrasi daftar ulang dilaksanakan pada tanggal 8 &ndash; 11 Juli 2022&nbsp;pukul 08.00 &ndash; 14.00 </span></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;2. Mencetak dan membawa Surat Pengumuman ini sebagai bukti&nbsp; lulus seleksi</span></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp; &nbsp; &nbsp; &nbsp; 3.&nbsp;Membawa materai Rp. 10.000,- sebanyak 2 lembar</span></span></span></span></p>\r\n</body>\r\n</html>\r\n', '2018-04-14 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -484,7 +496,11 @@ INSERT INTO `tbl_rapor` (`id_rapor`, `mapel`, `semester1`, `semester2`, `semeste
 (29, 'Ilmu Pengetahuan Alam (IPA)', 90, 90, 90, 90, 90, 90, '011-PSB-2022'),
 (30, 'Matematika', 90, 90, 90, 90, 90, 90, '011-PSB-2022'),
 (31, 'Bahasa Indonesia', 90, 90, 90, 90, 90, 90, '011-PSB-2022'),
-(32, 'Bahasa Inggris', 90, 90, 90, 90, 90, 90, '011-PSB-2022');
+(32, 'Bahasa Inggris', 90, 90, 90, 90, 90, 90, '011-PSB-2022'),
+(33, 'Ilmu Pengetahuan Alam (IPA)', 76, 78, 76, 56, 78, 73, '012-PSB-2022'),
+(34, 'Matematika', 88, 87, 96, 77, 65, 83, '012-PSB-2022'),
+(35, 'Bahasa Indonesia', 67, 76, 89, 76, 97, 81, '012-PSB-2022'),
+(36, 'Bahasa Inggris', 79, 67, 89, 76, 67, 76, '012-PSB-2022');
 
 -- --------------------------------------------------------
 
@@ -583,9 +599,10 @@ INSERT INTO `tbl_siswa` (`id_siswa`, `no_pendaftaran`, `password`, `nisn`, `nama
 (6, '006-PSB-2022', '7463587463', 2147483647, 'Irkham Maul', 'Laki-Laki', 'Debong', '05-03-2006', 'Islam', 3, 2, 0, 'Jalan Sawo', '6285800689339', 'Teknik Komputer Jaringan (TKJ)', 'Azis', 'S1', 'PNS', '3jt-5jt', '6281548777538', 'Retnoyati', 'SMA/SMK/MA', 'Wiraswasta', '500-1jt', '6281548777538', '', '', '', '', '', NULL, '2022-05-29 11:47:54', '097655', 'SMP Negeri 1 Slawi', 'Jalan Imam Bonjol', '2018', '90', '85', '80', '75', 82.5, '0', NULL),
 (7, '007-PSB-2022', '12', 12, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 22:59:18', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, NULL),
 (8, '008-PSB-2022', '121212', 121212, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 23:01:10', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, NULL),
-(9, '009-PSB-2022', '121212', 121212, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 23:01:48', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, NULL),
-(10, '010-PSB-2022', '121212122', 121212122, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 23:02:11', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, NULL),
-(11, '011-PSB-2022', '1234567890', 1234567890, 'dzaki', 'Laki-Laki', 'Tegal', '01-01-2004', 'Islam', 2, 2, 0, 'tegal', '0898989899', 'Akuntansi', 'asasa', 'Tdk Sekolah', 'Buruh', '< 500rb', '', 'asasqw', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-06-04 13:56:24', '121212', 'ass', 'asas', '2017', '79', '78', '80', '90', 81.75, '1', 'Lulus');
+(9, '009-PSB-2022', '121212', 121212, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 23:01:48', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, 'tidak lulus'),
+(10, '010-PSB-2022', '121212122', 121212122, 'asas', 'Laki-Laki', 'ras', '04-03-2006', 'Islam', 1, 1, 0, 'raw', '12', 'Teknik Kendaraan Ringan (TKR)', 'asa', 'SD/MI', 'Buruh', '< 500rb', '1212', 'sa1', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-05-31 23:02:11', '1212', 'asas', 'asq', '2017', '77', '77', '77', '75', 76.5, NULL, 'tidak lulus'),
+(11, '011-PSB-2022', '1234567890', 1234567890, 'dzaki', 'Laki-Laki', 'Tegal', '01-01-2004', 'Islam', 2, 2, 0, 'tegal', '0898989899', 'Akuntansi', 'asasa', 'Tdk Sekolah', 'Buruh', '< 500rb', '', 'asasqw', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-06-04 13:56:24', '121212', 'ass', 'asas', '2017', '79', '78', '80', '90', 81.75, '1', 'Lulus'),
+(12, '012-PSB-2022', '12345', 12345, 'agus', 'Laki-Laki', 'tegal', '01-02-2003', 'Islam', 2, 2, 0, 'tegal', '08123456789', 'Teknik Komputer Jaringan (TKJ)', 'bagas', 'Tdk Sekolah', 'Buruh', '< 500rb', '', 'bigis', 'Tdk Sekolah', 'Ibu Rumah Tangga\r\n', '< 500rb', '', '', '', '', '', '', NULL, '2022-06-08 22:45:00', 'aoskoa12', 'sd m tegal', 'tegal', '2017', '80', '84', '60', '75', 74.75, '0', NULL);
 
 -- --------------------------------------------------------
 
@@ -616,7 +633,8 @@ INSERT INTO `tbl_ujian` (`id_ujian`, `no_pend`, `no_test`, `nama`, `tanggal`, `r
 (5, '006-PSB-2022', '005-TES-2022', 'Irkham Maul', NULL, '', 0, ''),
 (6, '007-PSB-2022', '006-TES-2022', 'asas', NULL, '', 0, ''),
 (7, '010-PSB-2022', '007-TES-2022', 'asas', NULL, '', 0, ''),
-(8, '011-PSB-2022', '008-TES-2022', 'dzaki', NULL, '', 78, '');
+(8, '011-PSB-2022', '008-TES-2022', 'dzaki', NULL, '', 78, ''),
+(9, '012-PSB-2022', '009-TES-2022', 'agus', NULL, '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -638,7 +656,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama_lengkap`, `level`, `tgl_daftar`) VALUES
-(1, 'admin', 'admin', 'Zaki Yulianto', 'admin', '2018-04-12 00:00:00');
+(1, 'admin', 'admin', 'Zaki Yulianto', 'admin', '2018-04-12 00:00:00'),
+(7, 'aoksoa', 'askaos', 'sakosk', 'admin', '2022-08-30 04:01:51');
 
 -- --------------------------------------------------------
 
@@ -760,7 +779,8 @@ INSERT INTO `tr_ikut_ujian` (`id`, `id_tes`, `id_user`, `list_soal`, `list_jawab
 (4, 3, 5656565, '43,53,44,39,47,40,48,45,52,46,50,41,51,42,49', '43:A,53:D,44:C,39:,47:,40:,48:,45:,52:,46:,50:,41:,51:,42:,49:', 0, 0, 0, '2022-03-30 09:02:48', '2022-03-30 09:12:48', 'N'),
 (5, 1, 1234567890, '27,29,32,30,37,31,24,28,35,36,25,38,26,34,33', '27:A,29:B,32:B,30:C,37:C,31:C,24:D,28:D,35:D,36:C,25:C,38:C,26:C,34:C,33:D', 4, 27, 20, '2022-06-04 14:05:43', '2022-06-04 14:15:43', 'N'),
 (6, 2, 1234567890, '', '', 0, 0, 0, '2022-06-04 14:07:44', '2022-06-04 14:08:44', 'Y'),
-(7, 3, 1234567890, '40,41,44,53,42,45,52,39,43,47,51,49,50,46,48', '40:A,41:A,44:B,53:C,42:C,45:D,52:D,39:D,43:D,47:D,51:D,49:D,50:C,46:D,48:D', 5, 33, 25, '2022-06-04 14:07:50', '2022-06-04 14:17:50', 'N');
+(7, 3, 1234567890, '40,41,44,53,42,45,52,39,43,47,51,49,50,46,48', '40:A,41:A,44:B,53:C,42:C,45:D,52:D,39:D,43:D,47:D,51:D,49:D,50:C,46:D,48:D', 5, 33, 25, '2022-06-04 14:07:50', '2022-06-04 14:17:50', 'N'),
+(8, 2, 5656565, '', '', 0, 0, 0, '2022-06-24 22:22:19', '2022-06-24 22:23:19', 'Y');
 
 -- --------------------------------------------------------
 
@@ -958,7 +978,7 @@ ALTER TABLE `tr_siswa_mapel`
 -- AUTO_INCREMENT for table `m_admin`
 --
 ALTER TABLE `m_admin`
-  MODIFY `id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `m_guru`
@@ -982,19 +1002,19 @@ ALTER TABLE `m_soal`
 -- AUTO_INCREMENT for table `tbl_bakat`
 --
 ALTER TABLE `tbl_bakat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
-  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_nominal`
@@ -1018,7 +1038,7 @@ ALTER TABLE `tbl_pekerjaan`
 -- AUTO_INCREMENT for table `tbl_pembayaran`
 --
 ALTER TABLE `tbl_pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_penghasilan`
@@ -1036,7 +1056,7 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_rapor`
 --
 ALTER TABLE `tbl_rapor`
-  MODIFY `id_rapor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_rapor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `tbl_ruang_ujian`
@@ -1048,19 +1068,19 @@ ALTER TABLE `tbl_ruang_ujian`
 -- AUTO_INCREMENT for table `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
-  MODIFY `id_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_ujian`
 --
 ALTER TABLE `tbl_ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_verifikasi`
@@ -1090,7 +1110,7 @@ ALTER TABLE `tr_guru_tes`
 -- AUTO_INCREMENT for table `tr_ikut_ujian`
 --
 ALTER TABLE `tr_ikut_ujian`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tr_siswa_mapel`
