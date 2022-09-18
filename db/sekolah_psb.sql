@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2022 at 07:15 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Sep 18, 2022 at 04:11 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -204,7 +202,41 @@ INSERT INTO `m_soal` (`id`, `id_guru`, `id_mapel`, `bobot`, `gambar`, `soal`, `o
 (50, 5, 4, 5, '', 'Perhatikan pernyataan?pernyataan berikut!\r\n1. membatasi penelitian?penelitian tentang sumber\r\ndaya alam\r\n2. penggunaan sumber daya alamsebaik mungkin\r\n3. mementingkan kelanjutan penggunaan sumber\r\ndaya alam\r\n4. eksplorasi sumber daya alam secara besar?\r\nbesaran\r\nCara?cara pengolahan sumber daya alam yang\r\nberwawasan lingkungan untuk meningkatkan taraf\r\nhidup manusia adalah ….', '1 dan 2', '2 dan 3', '2 dan 4', '3 dan 4', '1, 3 dan 4', 'B', '2020-07-15 11:37:14'),
 (51, 5, 4, 5, '', 'Perhatikan data berikut:\r\n1. Urea\r\n2. KCl\r\n3. NPK\r\n4. TSP\r\nDari data di atas jenis pupuk yang mengandung\r\nnitrogen adalah ….', '1 dan 2 ', '1 dan 3', '3 dan 4', '1 dan 4', '2 dan 4', 'B', '2020-07-15 11:39:27'),
 (52, 5, 4, 5, '', 'Kriteria rumah tinggal yang baik adalah….', 'terbuat dari tembok', 'ada ventilasi atau lubang angin', 'bagus', 'selalu tertutup', 'tidak memiliki jendela', 'B', '2020-07-15 11:41:00'),
-(53, 5, 4, 5, '', '2 Kg air dari suhu 24? dipanaskan menjadi 90?,\r\njika kalor jenis 4.200 Joule/Kg?, maka kalor yang\r\nditerima air adalah ….', '336.000 Joule', '259.200 Joule', '554.400 Joule', '543.600 Joule', '456.700 Joule', 'C', '2020-07-15 11:42:48');
+(53, 5, 4, 5, '', '2 Kg air dari suhu 24? dipanaskan menjadi 90?,\r\njika kalor jenis 4.200 Joule/Kg?, maka kalor yang\r\nditerima air adalah ….', '336.000 Joule', '259.200 Joule', '554.400 Joule', '543.600 Joule', '456.700 Joule', 'C', '2020-07-15 11:42:48'),
+(54, 2, 3, 5, '', '8, 17, 33, ...., ...., 257 (carilah nilai yang titik titik)', '63 dan 127', '64 dan 128', '65 dan 129', '66 dan 130', '67 dan 131', 'C', '2022-09-18 18:10:33'),
+(55, 2, 3, 5, '', '231 .... 453, 564', '121', '342', '421', '241', '325', 'B', '2022-09-18 18:13:13'),
+(56, 2, 3, 5, '', 'Suatu seri 18 – 14 – 10 – 15 – 11 – 9 – 12 – ... (deret selanjutnya adalah?)', '8', '4', '7', '3', '5', 'A', '2022-09-18 18:14:27'),
+(57, 2, 3, 5, '', 'Suatu deret a – f – b – b – f – c – c – f – d – d – ... deret selanjutnya adalah?', 'd', 'e', 'g', 'h', 'f', 'D', '2022-09-18 18:31:53'),
+(58, 2, 3, 5, '', 'Hasan bekerja di sebuah perusahaan memperoleh upah kotor dalam sebulan Rp. 800.000,00 dengan pajak penghasilan 18%. Upah bersih yang diterima Hasan dalam satu tahun adalah …', 'Rp. 11.200.000,00', 'Rp. 7.200.000,00', 'Rp. 9.350.000,00', 'Rp. 7.872.000,00', 'Rp. 6.257.000,00', 'D', '2022-09-18 18:36:11'),
+(59, 2, 3, 5, '', 'Jumlah dua bilangan prima adalah 12.345. hasil kali kedua bilangan tersebut, adalah …', '24.668', '24.686', '26.486', '26.686', '76.986', 'B', '2022-09-18 18:38:42'),
+(60, 2, 3, 5, '', 'Umur Rudi 9 tahun 11 bulan 21 hari, sedangkan umur Andi 12 tahun 3 bulan 14 hari. Jumlah umur Rudi dan Andi adalah …', '21 tahun 3 bulan 5 hari', '22 tahun 3 bulan 5 hari', '22 tahun 2 bulan 5 hari', '21 tahun 2 bulan 5 hari', '21 tahun 6 bulan 15 hari', 'B', '2022-09-18 18:41:24'),
+(61, 2, 3, 5, '', 'Seri bilangan 90 – 84 – 82 – 84 – 78 – 76 – 78 ….', '68', '58', '76', '72', '60', 'D', '2022-09-18 18:48:43'),
+(62, 2, 3, 5, '', 'Pada suatu penangkaran terdapat burung pipit dan burung dara. Ketika 5 burung pipit dilepaskan, jumlah burung dara dua kali burung pipit yang tersisa. Kemudian, ketika \r\n25 ekor burung dara dilepaskan, burung pipit yang tersisa adalah 3 kali burung dara yang tersisa. Jumlah burung pipit semula adalah...', '20', '25', '35', '30', '22', 'A', '2022-09-18 18:54:57'),
+(63, 2, 3, 5, '', 'Misalkan rata-rata nilai ujian Matematika dari 30 siswa adalah 8, 4. Jika nilai yang terkecil tidak diperhitungkan, maka rata-ratanya menjadi 8, 5 sedangkan jika nilai terbesarnya tidak diperhitungkan, maka rata-ratanya menjadi 8, 2. Jangkauan dari nilai ujian Matematika adalah...', '7, 4', '7, 8', '8, 2', '8, 7', '6, 9', 'D', '2022-09-18 18:59:58'),
+(64, 2, 3, 5, '', 'Budi dapat sebuah gardu dalam 45 hari, Toni dalam 30 hari. Jika Budi dan Toni bekerja bersama-sama, maka pekerjaan akan selesai dalam...', '25 Hari', '18 Hari', '15 Hari', '12 Hari', '13 Hari', 'B', '2022-09-18 19:01:40'),
+(65, 2, 3, 5, '', 'Perbandingan uang Budi dan uang Rani adalah 3 : 4, sedangkan perbandingan uang Rani dan uang Tini adalah 6 : 7. Selisih uang Rani dan uang Budi adalah Rp 30.000. Jumlah uang Budi dan Tini adalah...', 'R p 270.000 , 00', 'R p 260.000 , 00', 'R p 230.000 , 00', 'R p 210.000 , 00', 'R p 225.000 , 00', 'C', '2022-09-18 19:04:21'),
+(66, 2, 3, 5, '', 'Pedagang membeli 150kg beras dengan harga Rp 750.00, 00, jika pedagang menginginkan untung 15%, harga penjualan tiap kg adalah...', 'R p 6.000 , 00', 'R p 5.750 , 00', 'R p 5.500 , 00', 'R p 4.500 , 00', 'R p 4.255 , 00', 'B', '2022-09-18 19:07:15'),
+(67, 2, 3, 5, '', 'Seutas tali dipotong menjadi 5 bagian dengan panjang membentuk suatu barisan geometri, jika tali yang paling pendek 5 cm, dan yang paling panjang 405 cm. Panjang tali semula adalah...', '530 cm', '605 cm', '705 cm', '925 cm', '610 cm', 'B', '2022-09-18 19:09:14'),
+(68, 2, 3, 5, '', 'Diketahui 5 buah truk. Truk A dan B masing-masing memuat 4 ton. Truk C dan D masing-masing memuat 6 ton. Jika truk E memuat 1 ton lebih dari rata-rata muatan kelima Truk, maka muatan truk A + muatan truk E = ? ton.', '8, 17', '9', '10', '10, 25', '11, 24', 'D', '2022-09-18 19:12:30'),
+(69, 2, 3, 5, '', 'Suku tengah barisan aritmatika adalah 23. Jika suku terakhirnya 43 dan suku ketiganya 13, maka banyak suku barisan itu adalah...', '5', '7', '9', '11', '8', 'B', '2022-09-18 19:14:09'),
+(70, 2, 3, 5, '', 'Sebuah tempat penampungan air berbentuk tabung dengan tinggi 1,2 m dan diameter 70 cm. Tempat penampungan air itu akan diisi air dengan kecepatan rata-rata 6 liter per menit. Tempat penampungan tersebut akan penuh setelah...', '1 jam 17 menit', '1 jam 27 menit', '2 jam 34 menit', '2 jam 51 menit', '2 jam 28 menit', 'A', '2022-09-18 19:16:55'),
+(71, 2, 3, 5, '', 'Jangkauan dan rata-rata nilai ujian 6 siswa adalah 6. Jika median data tersebut adalah 6 dan selisih antar kuartil ke-1 dan ke-3 adalah 4, maka jumlah dua nilai ujian tertinggi adalah...', '14', '15', '16', '17', '18', 'D', '2022-09-18 19:20:14'),
+(72, 2, 3, 5, '', 'Agar ketiga garis 3x + 2y + 4 = 0, x ? 3y + 5 = 0 dan 2x + (m+1) y ? 1 = 0 berpotongan di satu titik maka nilai m haruslah...', '-3', '2', '3', '4', '-1', 'D', '2022-09-18 19:23:52'),
+(73, 2, 3, 5, '', 'Budi dan Tini berbelanja di toko yang sama dalam minggu yang sama selama 5 hari (Senin sampai dengan Jumat). Mereka masing-masing mempunyai peluang yang sama untuk berbelanja di toko pada 5 hari tersebut. Peluang mereka berbelanja di toko itu pada hari yang berurutan adalah...', '0,20', '0,25', '0,32', '0,50', '0,42', 'C', '2022-09-18 19:26:08'),
+(74, 1, 1, 5, '', 'Bhineka X (antonim dari)', 'Jarang', 'Satu Jenis', 'Berbeda', 'Beragam', 'Berhenti', 'B', '2022-09-18 19:28:05'),
+(75, 1, 1, 5, '', 'Persamaan kata dari Semiotika', 'Ilmu tentang tanda', 'Ilmu seni', 'Ilmu bahasa', 'Bahasa simbol', 'Ungkapan kata', 'D', '2022-09-18 19:31:16'),
+(76, 1, 1, 5, '', 'Arti dari Rancu adalah', 'Canggung', 'Jorok', 'Kacau', 'Tidak wajar', 'Semu', 'C', '2022-09-18 19:33:44'),
+(77, 1, 1, 5, '', 'Unsur-unsur intrinsik cerpen adalah ….', 'psikologi – penokohan – pesen', 'alur – konflik – tema', 'latar – alur – amanat', 'tokoh – penokohan – filsafat', 'amanat – budaya – tema', 'C', '2022-09-18 19:36:15'),
+(78, 1, 1, 5, '', 'Hujan : Kekeringan = ... : ...', 'Api : kebakaran', 'Penuh : sesak', 'Panas : api', 'Lampu : gelap', 'Angin : dingin', 'E', '2022-09-18 19:38:36'),
+(79, 5, 4, 5, '', 'Pensil yg dicelupkan ke dalam gelas berisi air akan kelihatan patah, hal tersebut karena salah satu sifat cahaya yaitu cahaya dapat', 'embun', 'cair', 'pembiasan cahaya', 'pemantulan', 'pemuaian', 'C', '2022-09-18 19:45:43'),
+(80, 5, 4, 5, '', 'Perubahan wujud cair ke wujud gas disebut', 'menggupal', 'membeku', 'mencair', 'menguap', 'memantul', 'D', '2022-09-18 19:47:23'),
+(81, 5, 4, 5, '', 'Banyak getaran yang terjadi dalam satu detik disebut....', 'frekuensi/kekerapan', 'kegelapan', 'penerangan', 'pemuaian', 'membeku', 'A', '2022-09-18 19:49:17'),
+(82, 5, 4, 5, '', 'Penyakit mata dengan ciri-ciri mata diselimuti lapisa putih disebut .... ', 'katarak', 'rabun jauh', 'minus', 'plus', 'menguai', 'A', '2022-09-18 19:50:29'),
+(83, 5, 4, 5, '', 'Negara-negara di kawasan Asia Tenggara umumnya memiliki iklim', 'salju', 'tropis', 'panas', 'subtropis', 'semitropis', 'B', '2022-09-18 19:51:28'),
+(84, 4, 2, 5, '', 'I ________________ from France.', 'is', 'are', 'am', 'be', 'you', 'C', '2022-09-18 19:54:05'),
+(85, 4, 2, 5, '', 'This is my friend. _____________ name is Peter.', 'her', 'our', 'yours', 'his', 'him', 'D', '2022-09-18 19:54:56'),
+(86, 4, 2, 5, '', 'Mike is ______________.', 'my sister’s friend', 'friend my sister', 'friend from my sister', 'my sister friend’s', 'from in indo', 'A', '2022-09-18 19:57:08'),
+(87, 4, 2, 5, '', 'My brother is ______________ artist.', 'the', 'an', 'a', 'your', 'he', 'B', '2022-09-18 19:58:31');
 
 -- --------------------------------------------------------
 
@@ -279,7 +311,7 @@ CREATE TABLE `tbl_nilai` (
   `nilai_rapot` int(11) NOT NULL,
   `nilai_un` int(11) NOT NULL,
   `nilai_seleksi` int(11) NOT NULL,
-  `rata_rata` int(11) NOT NULL,
+  `rata_rata_del` int(11) NOT NULL,
   `total_nilai` int(11) NOT NULL,
   `keterangan` varchar(225) NOT NULL,
   `registered` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
@@ -289,7 +321,7 @@ CREATE TABLE `tbl_nilai` (
 -- Dumping data for table `tbl_nilai`
 --
 
-INSERT INTO `tbl_nilai` (`id_nilai`, `no_pendaftaran`, `nama`, `nilai_bakat`, `nilai_rapot`, `nilai_un`, `nilai_seleksi`, `rata_rata`, `total_nilai`, `keterangan`, `registered`) VALUES
+INSERT INTO `tbl_nilai` (`id_nilai`, `no_pendaftaran`, `nama`, `nilai_bakat`, `nilai_rapot`, `nilai_un`, `nilai_seleksi`, `rata_rata_del`, `total_nilai`, `keterangan`, `registered`) VALUES
 (1, '001-PSB-2021', 'Nico Dwi Novianto', 0, 6, 122728, 0, 0, 0, '', ''),
 (2, '002-PSB-2021', 'Warmo', 0, 90, 33396, 0, 0, 0, '', ''),
 (3, '003-PSB-2022', 'Yulianto Dzaky', 0, 83, 612000, 0, 0, 0, '', ''),
@@ -440,7 +472,7 @@ CREATE TABLE `tbl_pengumuman` (
 --
 
 INSERT INTO `tbl_pengumuman` (`id_pengumuman`, `ket_pengumuman`, `tgl_pengumuman`) VALUES
-(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style=\"margin-left:0cm; margin-right:0cm\"><span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Keterangan :</u></strong></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Registrasi daftar ulang dilaksanakan pada tanggal 8 &ndash; 11 Juli 2022&nbsp;pukul 08.00 &ndash; 14.00 </span></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;2. Mencetak dan membawa Surat Pengumuman ini sebagai bukti&nbsp; lulus seleksi</span></span></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"line-height:normal\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:10.0pt\">&nbsp; &nbsp; &nbsp; &nbsp; 3.&nbsp;Membawa materai Rp. 10.000,- sebanyak 2 lembar</span></span></span></span></p>\r\n</body>\r\n</html>\r\n', '2018-04-14 00:00:00');
+(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style="margin-left:0cm; margin-right:0cm"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><strong><u>Keterangan :</u></strong></span></span></span><br />\r\n<span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Registrasi daftar ulang dilaksanakan pada tanggal 8 &ndash; 11 Juli 2022&nbsp;pukul 08.00 &ndash; 14.00 </span></span></span></span><br />\r\n<span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;2. Mencetak dan membawa Surat Pengumuman ini sebagai bukti&nbsp; lulus seleksi</span></span></span></span><br />\r\n<span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.0pt">&nbsp; &nbsp; &nbsp; &nbsp; 3.&nbsp;Membawa materai Rp. 10.000,- sebanyak 2 lembar</span></span></span></span></p>\r\n</body>\r\n</html>\r\n', '2018-04-14 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -677,7 +709,7 @@ CREATE TABLE `tbl_verifikasi` (
 --
 
 INSERT INTO `tbl_verifikasi` (`id_verifikasi`, `isi`, `ket`, `tgl_verifikasi`) VALUES
-(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Materi Tes Potensi Akdemik :</u></strong></span></span><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u> </u></strong></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Pendidikan Agama Islam (PAI)&nbsp; &nbsp; &nbsp; : 25 soal </span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Hari Tanggal tes : </u></strong></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;tanggal 3 s.d 5 Juli 2019</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><strong><u>Waktu Tes potensi Akademik :</u></strong></span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 1&nbsp; : 07.00 - 09.00</span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 2&nbsp; : 09.30 - 11.30<br />\r\n&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></span><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">Sesi 3&nbsp; : 12.00 - 14.00</span></span><br />\r\n<span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 4&nbsp; : 14.30 - 16.30</span></span></p>\r\n\r\n<p style=\"margin-left:0cm; margin-right:0cm; text-align:justify\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:14.6667px\"><strong>Note :</strong></span></span><br />\r\n<strong><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><em>jadwal ujian bisa berubah sewaktu - waktu&nbsp; Update infomasi di web PSB&nbsp;</em></span></span><em><span style=\"font-size:11.0pt\">peserta ujian datang 15&nbsp; menit sebelun tes dimulai.</span></em></strong></p>\r\n</body>\r\n</html>\r\n', NULL, NULL);
+(1, '<html>\r\n<head>\r\n	<title></title>\r\n</head>\r\n<body>\r\n<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><u>Materi Tes Potensi Akdemik :</u></strong></span></span><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><u> </u></strong></span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp; &nbsp; &nbsp; &nbsp;1.&nbsp;Pendidikan Agama Islam (PAI)&nbsp; &nbsp; &nbsp; : 25 soal </span></span></p>\r\n\r\n<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><u>Hari Tanggal tes : </u></strong></span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;tanggal 3 s.d 5 Juli 2019</span></span></p>\r\n\r\n<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><strong><u>Waktu Tes potensi Akademik :</u></strong></span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 1&nbsp; : 07.00 - 09.00</span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 2&nbsp; : 09.30 - 11.30<br />\r\n&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></span><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">Sesi 3&nbsp; : 12.00 - 14.00</span></span><br />\r\n<span style="font-size:11pt"><span style="font-family:Calibri,sans-serif">&nbsp; &nbsp; &nbsp; &nbsp; Sesi 4&nbsp; : 14.30 - 16.30</span></span></p>\r\n\r\n<p style="margin-left:0cm; margin-right:0cm; text-align:justify"><span style="font-family:Calibri,sans-serif"><span style="font-size:14.6667px"><strong>Note :</strong></span></span><br />\r\n<strong><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><em>jadwal ujian bisa berubah sewaktu - waktu&nbsp; Update infomasi di web PSB&nbsp;</em></span></span><em><span style="font-size:11.0pt">peserta ujian datang 15&nbsp; menit sebelun tes dimulai.</span></em></strong></p>\r\n</body>\r\n</html>\r\n', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -776,11 +808,8 @@ CREATE TABLE `tr_ikut_ujian` (
 INSERT INTO `tr_ikut_ujian` (`id`, `id_tes`, `id_user`, `list_soal`, `list_jawaban`, `jml_benar`, `nilai`, `nilai_bobot`, `tgl_mulai`, `tgl_selesai`, `status`) VALUES
 (1, 1, 121212, '24,28,30,34,25,29,37,35,32,27,36,38,31,26,33', '24:A,28:A,30:A,34:B,25:C,29:E,37:D,35:C,32:A,27:B,36:B,38:B,31:A,26:B,33:C', 3, 30, 15, '2021-11-14 20:16:27', '2021-11-14 20:26:27', 'N'),
 (2, 1, 5656565, '31,30,35,29,28,24,26,37,32,36,33,34,25,38,27', '31:B,30:D,35:D,29:E,28:A,24:A,26:B,37:D,32:A,36:B,33:B,34:B,25:C,38:A,27:C', 4, 70, 20, '2022-03-10 11:34:55', '2022-03-10 11:44:55', 'N'),
-(4, 3, 5656565, '43,53,44,39,47,40,48,45,52,46,50,41,51,42,49', '43:A,53:D,44:C,39:,47:,40:,48:,45:,52:,46:,50:,41:,51:,42:,49:', 0, 0, 0, '2022-03-30 09:02:48', '2022-03-30 09:12:48', 'N'),
 (5, 1, 1234567890, '27,29,32,30,37,31,24,28,35,36,25,38,26,34,33', '27:A,29:B,32:B,30:C,37:C,31:C,24:D,28:D,35:D,36:C,25:C,38:C,26:C,34:C,33:D', 4, 27, 20, '2022-06-04 14:05:43', '2022-06-04 14:15:43', 'N'),
-(6, 2, 1234567890, '', '', 0, 0, 0, '2022-06-04 14:07:44', '2022-06-04 14:08:44', 'Y'),
-(7, 3, 1234567890, '40,41,44,53,42,45,52,39,43,47,51,49,50,46,48', '40:A,41:A,44:B,53:C,42:C,45:D,52:D,39:D,43:D,47:D,51:D,49:D,50:C,46:D,48:D', 5, 33, 25, '2022-06-04 14:07:50', '2022-06-04 14:17:50', 'N'),
-(8, 2, 5656565, '', '', 0, 0, 0, '2022-06-24 22:22:19', '2022-06-24 22:23:19', 'Y');
+(7, 3, 1234567890, '40,41,44,53,42,45,52,39,43,47,51,49,50,46,48', '40:A,41:A,44:B,53:C,42:C,45:D,52:D,39:D,43:D,47:D,51:D,49:D,50:C,46:D,48:D', 5, 33, 25, '2022-06-04 14:07:50', '2022-06-04 14:17:50', 'N');
 
 -- --------------------------------------------------------
 
@@ -979,146 +1008,121 @@ ALTER TABLE `tr_siswa_mapel`
 --
 ALTER TABLE `m_admin`
   MODIFY `id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
 --
 -- AUTO_INCREMENT for table `m_guru`
 --
 ALTER TABLE `m_guru`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `m_mapel`
 --
 ALTER TABLE `m_mapel`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `m_soal`
 --
 ALTER TABLE `m_soal`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
-
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 --
 -- AUTO_INCREMENT for table `tbl_bakat`
 --
 ALTER TABLE `tbl_bakat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT for table `tbl_foto`
 --
 ALTER TABLE `tbl_foto`
   MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT for table `tbl_nilai`
 --
 ALTER TABLE `tbl_nilai`
   MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `tbl_nominal`
 --
 ALTER TABLE `tbl_nominal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `tbl_pdd`
 --
 ALTER TABLE `tbl_pdd`
   MODIFY `id_pdd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `tbl_pekerjaan`
 --
 ALTER TABLE `tbl_pekerjaan`
   MODIFY `id_pekerjaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
 --
 -- AUTO_INCREMENT for table `tbl_pembayaran`
 --
 ALTER TABLE `tbl_pembayaran`
   MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `tbl_penghasilan`
 --
 ALTER TABLE `tbl_penghasilan`
   MODIFY `id_penghasilan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
 --
 ALTER TABLE `tbl_pengumuman`
   MODIFY `id_pengumuman` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `tbl_rapor`
 --
 ALTER TABLE `tbl_rapor`
   MODIFY `id_rapor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-
 --
 -- AUTO_INCREMENT for table `tbl_ruang_ujian`
 --
 ALTER TABLE `tbl_ruang_ujian`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
 --
 -- AUTO_INCREMENT for table `tbl_siswa`
 --
 ALTER TABLE `tbl_siswa`
   MODIFY `id_siswa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- AUTO_INCREMENT for table `tbl_ujian`
 --
 ALTER TABLE `tbl_ujian`
   MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `tbl_verifikasi`
 --
 ALTER TABLE `tbl_verifikasi`
   MODIFY `id_verifikasi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `tbl_web`
 --
 ALTER TABLE `tbl_web`
   MODIFY `id_web` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `tr_guru_mapel`
 --
 ALTER TABLE `tr_guru_mapel`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `tr_guru_tes`
 --
 ALTER TABLE `tr_guru_tes`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `tr_ikut_ujian`
 --
 ALTER TABLE `tr_ikut_ujian`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `tr_siswa_mapel`
 --
 ALTER TABLE `tr_siswa_mapel`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
