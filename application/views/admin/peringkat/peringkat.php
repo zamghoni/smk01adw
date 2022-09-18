@@ -29,10 +29,11 @@
               <th width="30px;">No.</th>
               <th>No. Pendaftaran</th>
               <th>Nama Pendaftar</th>
-              <th>Rata-Rata Nilai UN</th>
-              <th>Nilai Test Wawancara</th>
-              <th>Nilai CBT</th>
-              <th>Rata Rata Nilai</th>
+              <th>Rata-Rata Nilai UN (25%)</th>
+              <th>Nilai Test Wawancara (20%)</th>
+              <th>Nilai Ujian Selekasi CBT (30%)</th>
+              <th>Nilai Rata-Rata Raport (25%)</th>
+              <th>Nilai Akhir (100%)</th>
               <th>Keterangan</th>
               <th>Aksi</th>
             </tr>
@@ -42,29 +43,35 @@
               $no = 1;
               foreach ($v_siswa->result() as $baris) {?>
                 <tr>
-                  <?php $hasil = ($baris->rata_rata)+($baris->nilai_pai)+($baris->nilai); ?>
-                  <?php $rata = $hasil/3 ?>
+                  <?php
+                  $rata2un        = (25/100)*$baris->rata_rata;
+                  $tes_wawancara  = (20/100)*$baris->nilai_pai;
+                  $ujiancbt       = (30/100)*$baris->nilai;
+                  $rata2rapot     = (25/100)*$baris->nilai_rapot;
+                  $hasil = ($rata2un)+($tes_wawancara)+($ujiancbt)+($rata2rapot); ?>
                   <td><?php echo $no++; ?></td>
                   <td><?php echo $baris->no_pendaftaran; ?></td>
                   <td><?php echo $baris->nama; ?></td>
                   <td><?php echo $baris->rata_rata; ?></td>
                   <td><?php echo $baris->nilai_pai; ?></td>
                   <td><?php echo $baris->nilai; ?></td>
-                  <td><?php echo round($rata,2); ?></td>
+                  <td><?php echo $baris->nilai_rapot; ?></td>
+                  <td><?php echo round($hasil,2); ?></td>
                   <td align="center">
-                    <?php if ($rata < 70) {?>
+                    <?php if ($hasil < 70) {?>
                       <label class="label label-danger">Tidak Lulus</label>
-                    <?php }else if($rata >= 70){ ?>
+                    <?php }else if($hasil >= 70){ ?>
                       <label class="label label-success">Lulus</label>
                     <?php }else{ ?>
                       <label>-</label>
                     <?php } ?>
                   </td>
                  <td align="center">
-                   <?php if ($baris->status_pendaftaran != null){ ?>
-                     <p class="label label-success">Terkirim</p>
+                   <?php if ($baris->status_pendaftaran == 'Tidak-lulus'){ ?>
+                     <!-- <p class="label label-success">Terkirim</p> -->
+                     <a href="panel_admin/peringkat_ket_update/<?=$baris->no_pendaftaran?>/<?php if ($hasil < 70) {?>Tidak-lulus<?php }else if($hasil >= 70){ ?>Lulus<?php } ?>" class="label label-primary btn-xs" title="Buat Pengumuman"> <i class="glyphicon glyphicon-send" target="_blank"></i> Update Pengumuman</a>
                    <?php }else{ ?>
-                     <a href="panel_admin/peringkat_ket_update/<?=$baris->no_pendaftaran?>/<?php if ($rata < 70) {?>Tidak-lulus<?php }else if($rata >= 70){ ?>Lulus<?php } ?>" class="label label-primary btn-xs" title="Buat Pengumuman"> <i class="glyphicon glyphicon-send" target="_blank"></i> Buat Pengumuman</a>
+                     <a href="panel_admin/peringkat_ket_update/<?=$baris->no_pendaftaran?>/<?php if ($hasil < 70) {?>Tidak-lulus<?php }else if($hasil >= 70){ ?>Lulus<?php } ?>" class="label label-primary btn-xs" title="Buat Pengumuman"> <i class="glyphicon glyphicon-send" target="_blank"></i> Update Pengumuman</a>
                    <?php } ?>
                     <!-- <a href="panel_admin/cetak_data_nilai/<?php echo $baris->no_pendaftaran; ?>" class="btn btn-default btn-xs" title="Cetak Data Nilai" target="_blank"><i class="glyphicon glyphicon-print"></i></a> -->
                   </td>

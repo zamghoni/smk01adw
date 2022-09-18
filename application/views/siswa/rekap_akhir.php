@@ -86,31 +86,32 @@
         <th>Nilai</th>
       </tr>
       <tr>
-        <td>Nilai Rata-Rata UN</td>
+        <td>Nilai Rata-Rata UN (25%)</td>
         <td align="center"><?php echo $un->rata_rata; ?></td>
       </tr>
       <tr>
-        <td>Nilai Tes Wawancara</td>
+        <td>Nilai Tes Wawancara (20%)</td>
         <td align="center"><?php echo $pai->nilai_pai; ?></td>
       </tr>
-        <td>Nilai Ujian Seleksi CBT</td>
+        <td>Nilai Ujian Seleksi CBT (30%)</td>
         <td align="center"><?php echo $cbt->nilai; ?></td>
       </tr>
       <tr>
-        <td>Nilai Rata Rata Raport Sem.4,5,6</td>
+        <td>Nilai Rata-Rata Raport (25%)</td>
         <td align="center"><?php echo $nilai->nilai_rapot; ?></td>
         <tr>
       <?php
-      $jumlah = $un->rata_rata + $pai->nilai_pai + $cbt->nilai + $nilai->nilai_rapot;
-      $rata = $jumlah/4;
+      $jumlah = ($un->rata_rata*(25/100)) + ($pai->nilai_pai*(20/100)) + ($cbt->nilai*(30/100)) + ($nilai->nilai_rapot*(25/100));
+      $rata2 = $un->rata_rata + $pai->nilai_pai + $cbt->nilai + $nilai->nilai_rapot;
+      $rata = $rata2/4;
        ?>
 
       <tr>
-        <th>Jumlah Score</th>
-        <th><?php echo $jumlah; ?></th>
+        <th>Nilai Akhir (100%)</th>
+        <th><?php echo round($jumlah,2); ?></th>
       </tr>
       <tr>
-        <th>Rata - Rata Score</th>
+        <th>Rata - Rata Nilai</th>
         <th><?php echo round($rata,2); ?></th>
       </tr>
     </table>

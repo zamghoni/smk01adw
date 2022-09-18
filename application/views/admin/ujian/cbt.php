@@ -42,7 +42,7 @@
                   <td><?php echo $baris->jml_benar; ?></td>
                   <form method="post" action="<?php echo base_url('panel_admin/cbt_add') ?>">
                   <td>
-                        <input type="hidden" name="id" class="form-control" value="<?php echo $baris->id; ?>">
+                        <input type="hidden" name="id" class="form-control" value="<?php echo $baris->id_siswa; ?>">
                         <input type="text" name="nilai" class="form-control" value="<?php echo $baris->nilai; ?>" maxlength="5" required>
                   </td>
                   <td align="center">
@@ -72,4 +72,3 @@
   });
 
 </script>
-

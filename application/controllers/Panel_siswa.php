@@ -231,7 +231,15 @@ class Panel_siswa extends CI_Controller {
 		$data['rapor'] 	= $this->db->get_where('tbl_rapor', "no_pendaftaran='$ceks'")->row();
 		$data['pai'] 	= $this->db->get_where('tbl_ujian', "no_pend='$ceks'")->row();
 		$data['nilai'] 	= $this->db->get_where('tbl_nilai', "no_pendaftaran='$ceks'")->row();
-		$data['cbt'] 	= $this->db->get_where('tr_ikut_ujian', "id_user= '$nisn'")->row();
+		$this->db->select('*');
+		$this->db->select_sum('jml_benar');
+		$this->db->select_sum('nilai');
+		$this->db->where('id_user', $nisn);
+				$this->db->from('tr_ikut_ujian');
+				$this->db->join('m_siswa', 'id_siswa = id_user');
+				// $this->db->group_by("id_user");
+				$data['cbt'] =  $this->db->get()->row();
+		// $data['cbt'] 	= $this->db->get_where('tr_ikut_ujian', "id_user= '$nisn'")->row();
 
 		$this->load->view('siswa/rekap_akhir', $data);
 	}

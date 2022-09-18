@@ -225,11 +225,12 @@ class Panel_admin extends CI_Controller {
 
 			$this->db->select('*');
 			$this->db->select_sum('nilai');
-	        $this->db->from('tbl_siswa');
-	        $this->db->join('tbl_ujian', 'no_pend = no_pendaftaran');
-	        $this->db->join('tr_ikut_ujian', 'id_user = nisn');
-	        $this->db->group_by("no_pendaftaran");
-	        $data['v_siswa'] =  $this->db->get();
+	    $this->db->from('tbl_siswa');
+	    $this->db->join('tbl_ujian', 'no_pend = no_pendaftaran');
+			$this->db->join('tbl_nilai', 'tbl_siswa.no_pendaftaran = tbl_nilai.no_pendaftaran');
+	    $this->db->join('tr_ikut_ujian', 'tr_ikut_ujian.id_user = tbl_siswa.nisn');
+	    $this->db->group_by("tbl_siswa.no_pendaftaran");
+	    $data['v_siswa'] =  $this->db->get();
 
 			$thn = date('Y');
 			$data['v_thn']				= $thn;
@@ -376,7 +377,7 @@ class Panel_admin extends CI_Controller {
 			$data = array(
 					'nilai'	=> $this->input->post('nilai')
 				);
-				$this->db->update('tr_ikut_ujian', $data, array('id' => "$id"));
+				$this->db->update('tr_ikut_ujian', $data, array('id_user' => "$id"));
 				$this->session->set_flashdata('msg',
 							'
 							<div class="alert alert-success alert-dismissible" role="alert">
